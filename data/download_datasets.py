@@ -94,6 +94,6 @@ def download_nerd():
 
 download_nerf_synthetic()
 download_nerd()
-download_nerfactor()
+# download_nerfactor()
 print("Completed")
 

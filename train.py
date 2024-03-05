@@ -39,6 +39,13 @@ from render.mesh import Mesh
 
 from denoiser.denoiser import BilateralDenoiser
 
+
+import sys
+sys.path.append('//home/kc81/current_projects') 
+
+from outdoor_relighting_nerf.datasets.waymo_nvdif import WaymoDataset
+
+
 RADIUS = 3.0
 
 # Enable to debug back-prop anomalies
@@ -92,12 +99,16 @@ def prepare_batch(target, train_res, bg_type):
         background = target['img'][..., 0:3]
     elif bg_type == 'random':
         background = torch.rand(target['img'].shape[0:3] + (3,), dtype=torch.float32, device='cuda')
+    elif bg_type == "None":
+        background = None
     else:
         assert False, "Unknown background type %s" % bg_type
 
     target['background'] = background
-    target['img'] = torch.cat((torch.lerp(background, target['img'][..., 0:3], target['img'][..., 3:4]), target['img'][..., 3:4]), dim=-1)
-
+    # TODO: waymo is a whole scene, not an object
+    # target['img'] = torch.cat((torch.lerp(background, target['img'][..., 0:3], target['img'][..., 3:4]), target['img'][..., 3:4]), dim=-1)
+    print("target['img'] = ", target['img'].shape)
+    print("target['resolution'] = ", target['resolution'], 'train_res = ', train_res)
     return target
 
 ###############################################################################
@@ -203,6 +214,7 @@ def initial_guess_material(geometry, mlp, FLAGS, init_mat=None):
 ###############################################################################
 
 def validate_itr(glctx, target, ref_mesh, geometry, opt_material, lgt, FLAGS, denoiser, iter=0):
+    print('validate_itr = ', iter)
     result_dict = {}
     with torch.no_grad():
         opt_mesh = geometry.getMesh(opt_material)
@@ -211,12 +223,17 @@ def validate_itr(glctx, target, ref_mesh, geometry, opt_material, lgt, FLAGS, de
                                         spp=target['spp'], num_layers=FLAGS.layers, background=target['background'], optix_ctx=geometry.optix_ctx, 
                                         denoiser=denoiser)
 
+        # result_dict['ref'] = target['img'][0, ...,0:3]
         result_dict['ref'] = util.rgb_to_srgb(target['img'][0, ...,0:3])
+        # result_dict['opt'] = buffers['shaded'][0, ...,0:3]
         result_dict['opt'] = util.rgb_to_srgb(buffers['shaded'][0, ...,0:3])
         result_image = torch.cat([result_dict['opt'], result_dict['ref']], axis=1)
 
         if FLAGS.display is not None:
-            white_bg = torch.ones_like(target['background'])
+            if target['background'] is None:
+                white_bg = None
+            else:
+                white_bg = torch.ones_like(target['background'])
             for layer in FLAGS.display:
                 if 'latlong' in layer and layer['latlong']:
                     result_dict['light_image'] = lgt.generate_image(FLAGS.display_res)
@@ -258,6 +275,8 @@ def validate(glctx, geometry, opt_material, lgt, dataset_validate, out_dir, FLAG
     psnr_values = []
 
     # Hack validation to use high sample count and no denoiser
+    print('validation: ')
+    print('FLAGS.n_samples: ', 32)
     _n_samples = FLAGS.n_samples
     _denoiser = denoiser
     FLAGS.n_samples = 32
@@ -327,7 +346,7 @@ def optimize_mesh(
     optimize_light=True,
     optimize_geometry=True
     ):
-
+    print('optimize_mesh')
     # ==============================================================================================
     #  Setup torch optimizer
     # ==============================================================================================
@@ -381,6 +400,7 @@ def optimize_mesh(
 
     v_it = cycle(dataloader_validate)
 
+    print('Start enumerate(dataloader_train)')
     # Creates a GradScaler once at the beginning of training
     for it, target in enumerate(dataloader_train):
 
@@ -420,7 +440,6 @@ def optimize_mesh(
         # ==============================================================================================
         if optimize_light:
             lgt.update_pdf()
-
         img_loss, reg_loss = geometry.tick(glctx, target, lgt, opt_material, image_loss_fn, it, FLAGS, denoiser)
 
         # ==============================================================================================
@@ -595,6 +614,9 @@ if __name__ == "__main__":
         if os.path.isfile(os.path.join(FLAGS.ref_mesh, 'poses_bounds.npy')):
             dataset_train    = DatasetLLFF(FLAGS.ref_mesh, FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
             dataset_validate = DatasetLLFF(FLAGS.ref_mesh, FLAGS)
+        elif FLAGS.waymo:
+            dataset_train = WaymoDataset(FLAGS.ref_mesh, 'train', FLAGS, downsample=0.5)
+            dataset_validate = WaymoDataset(FLAGS.ref_mesh, 'valid', FLAGS, downsample=0.5) # TODO valid?
         elif os.path.isfile(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'))  and not os.path.isfile(os.path.join(FLAGS.ref_mesh, 'intrinsics.txt')):
             dataset_train    = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'), FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
             dataset_validate = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_test.json'), FLAGS)
@@ -627,13 +649,14 @@ if __name__ == "__main__":
         # ==============================================================================================
         #  If no initial guess, use DMTet to create geometry
         # ==============================================================================================
-
+        print('use DMTet to create geometry')
         # Setup geometry for optimization
         geometry = DMTetGeometry(FLAGS.dmtet_grid, FLAGS.mesh_scale, FLAGS)
 
         # Setup textures, make initial guess from reference if possible
         mat = initial_guess_material(geometry, True, FLAGS)
     
+        print('Run optimization')
         # Run optimization
         mat['no_perturbed_nrm'] = True
         geometry, mat = optimize_mesh(denoiser, glctx, glctx_display, geometry, mat, lgt, dataset_train, dataset_validate, FLAGS, pass_idx=0, pass_name="dmtet_pass1", 
@@ -643,12 +666,14 @@ if __name__ == "__main__":
         if FLAGS.validate:
             validate(glctx_display, geometry, mat, lgt, dataset_validate, os.path.join(FLAGS.out_dir, "dmtet_validate"), FLAGS, denoiser)
 
+        print('Create initial guess mesh from result')
         # Create initial guess mesh from result
         base_mesh = xatlas_uvmap(glctx_display, geometry, mat, FLAGS).clone()
         base_mesh.v_pos = base_mesh.v_pos.clone().detach().requires_grad_(True)
         mat = material.create_trainable(base_mesh.material.copy())
         geometry = DLMesh(base_mesh, FLAGS)
 
+        print('Dump mesh for debugging')
         # Dump mesh for debugging
         os.makedirs(os.path.join(FLAGS.out_dir, "dmtet_mesh"), exist_ok=True)
         obj.write_obj(os.path.join(FLAGS.out_dir, "dmtet_mesh/"), base_mesh)
@@ -660,7 +685,7 @@ if __name__ == "__main__":
         # ==============================================================================================
         if FLAGS.transparency:
             FLAGS.layers = 8
-
+        print('Pass 2: Train with fixed topology (mesh)')
         mat['no_perturbed_nrm'] = False
         geometry, mat = optimize_mesh(denoiser, glctx, glctx_display, geometry, mat, lgt, dataset_train, dataset_validate, FLAGS, 
                     pass_idx=pass_idx, pass_name="mesh_pass", warmup_iter=100, 
@@ -670,7 +695,7 @@ if __name__ == "__main__":
         # ==============================================================================================
         #  Train with fixed topology (mesh)
         # ==============================================================================================
-
+        print('Train with fixed topology (mesh)')
         # Load initial guess mesh from file
         base_mesh = mesh.load_mesh(FLAGS.base_mesh)
         geometry = DLMesh(base_mesh, FLAGS)

@@ -71,6 +71,12 @@ class DLMesh:
         # ==============================================================================================
         #  Compute loss
         # ==============================================================================================
+        if FLAGS.waymo:
+            # TODO mask out sky (idx == 5)
+            semantic = target['semantic']
+            print('concat semantic mask as 4th channel')
+            color_ref = torch.cat([color_ref, semantic.unsqueeze(-1).to(color_ref.device)], dim=-1)
+            print('color_ref = ', color_ref.shape)
         # Image-space loss, split into a coverage component and a color component
         img_loss  = torch.nn.functional.mse_loss(buffers['shaded'][..., 3:], color_ref[..., 3:]) 
         img_loss += loss_fn(buffers['shaded'][..., 0:3] * color_ref[..., 3:], color_ref[..., 0:3] * color_ref[..., 3:])
