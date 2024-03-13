@@ -1,4 +1,5 @@
 {
+    "ref_mesh_studio": "data/nerf_synthetic/hotdog_nerfstudio",
     "nvdif_intrinsic": 1,
     "nvdif_extrinsic": 1,
     "waymo": 0,

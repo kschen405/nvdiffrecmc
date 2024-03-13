@@ -1,6 +1,7 @@
 {
-    "nvdif_intrinsic": 1,
-    "nvdif_extrinsic": 1,
+    "ref_mesh_studio": "data/nerf_synthetic/hotdog_nerfstudio",
+    "nvdif_intrinsic": 0,
+    "nvdif_extrinsic": 0,
     "waymo": 0,
     "ref_mesh": "data/nerf_synthetic/hotdog",
     "random_textures": true,
@@ -17,5 +18,5 @@
     "denoiser" : "bilateral",
     "display": [{"latlong" : true}, {"bsdf" : "kd"}, {"bsdf" : "ks"}, {"bsdf" : "normal"}],
     "background" : "white",
-    "out_dir": "nerf_hotdog11"
+    "out_dir": "nerf_hotdog00"
 }

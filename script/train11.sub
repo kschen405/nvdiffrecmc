@@ -1,0 +1,11 @@
+Executable   = script/train11.sh
+Log          = script/train11.log
+Output       = script/train11.stdout
+Error        = script/train11.stderr
+
+Request_gpus = 1
+Request_cpus = 4
+#requirements = (Machine == "vision-16.cs.illinois.edu")
+requirements = (Machine == "vision-22.cs.illinois.edu") || (Machine == "vision-23.cs.illinois.edu")
+#requirements = (Machine == "vision-3.cs.illinois.edu") || (Machine == "vision-21.cs.illinois.edu") || (Machine == "vision-22.cs.illinois.edu") || (Machine == "vision-23.cs.illinois.edu") || (Machine == "vision-16.cs.illinois.edu")
+Queue

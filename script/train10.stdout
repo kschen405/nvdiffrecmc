@@ -1,0 +1,1683 @@
+/software/cuda-11.6
+/software/gcc-8.2.0/bin:/software/cuda-11.6/bin:/usr/lib64/qt-3.3/bin:/home/kc81/setup/anaconda3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+/software/gcc-8.2.0/lib64:/software/gcc-8.2.0/lib:/software/cuda-11.6/lib64:/software/cuda-11.6/extras/CUPTI/lib64
+Mon Mar 11 23:54:25 2024       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.85.02    Driver Version: 510.85.02    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA A40          Off  | 00000000:01:00.0 Off |                    0 |
+|  0%   61C    P0   301W / 300W |  45163MiB / 46068MiB |     68%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA A40          Off  | 00000000:24:00.0 Off |                    0 |
+|  0%   61C    P0   312W / 300W |  45243MiB / 46068MiB |    100%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  NVIDIA A40          Off  | 00000000:41:00.0 Off |                    0 |
+|  0%   61C    P0   261W / 300W |  34861MiB / 46068MiB |    100%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  NVIDIA A40          Off  | 00000000:61:00.0 Off |                    0 |
+|  0%   19C    P8    29W / 300W |     82MiB / 46068MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   4  NVIDIA A40          Off  | 00000000:81:00.0 Off |                    0 |
+|  0%   58C    P0   226W / 300W |  37447MiB / 46068MiB |     99%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   5  NVIDIA A40          Off  | 00000000:A1:00.0 Off |                    0 |
+|  0%   20C    P8    28W / 300W |      2MiB / 46068MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   6  NVIDIA A40          Off  | 00000000:C1:00.0 Off |                    0 |
+|  0%   28C    P8    30W / 300W |      2MiB / 46068MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   7  NVIDIA A40          Off  | 00000000:E1:00.0 Off |                    0 |
+|  0%   29C    P8    31W / 300W |      2MiB / 46068MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     14292      C   python                          45133MiB |
+|    1   N/A  N/A     14317      C   python                          45187MiB |
+|    2   N/A  N/A     55320      C   python                          34859MiB |
+|    3   N/A  N/A      3610      G   /usr/bin/X                         79MiB |
+|    4   N/A  N/A     55594      C   python                          37445MiB |
++-----------------------------------------------------------------------------+
+gcc (GCC) 8.2.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+torch version =  1.13.1+cu116
+torch.cuda.is_available() =  True
+torch.cuda.device_count() =  1
+torchvision.__version__ =  0.14.1+cu116
+ninja: no work to do.
+End of OptiXStateWrapper 
+Config / Flags:
+---------
+iter 5000
+batch 4
+spp 1
+layers 1
+train_res [800, 800]
+display_res [800, 800]
+texture_res [1024, 1024]
+display_interval 0
+save_interval 100
+learning_rate [0.03, 0.005]
+custom_mip False
+background white
+loss logl1
+out_dir out/nerf_hotdog10
+config configs/nerf_hotdog10.json
+ref_mesh data/nerf_synthetic/hotdog
+base_mesh None
+validate True
+n_samples 8
+bsdf pbr
+denoiser bilateral
+denoiser_demodulate True
+mtl_override None
+dmtet_grid 128
+mesh_scale 3.0
+envlight None
+env_scale 1.0
+probe_res 256
+learn_lighting True
+display [{'latlong': True}, {'bsdf': 'kd'}, {'bsdf': 'ks'}, {'bsdf': 'normal'}]
+transparency False
+lock_light False
+lock_pos False
+sdf_regularizer 0.2
+laplace relative
+laplace_scale 3000.0
+pre_load True
+no_perturbed_nrm False
+decorrelated False
+kd_min [0.0, 0.0, 0.0, 0.0]
+kd_max [1.0, 1.0, 1.0, 1.0]
+ks_min [0.0, 0.08, 0.0]
+ks_max [0.0, 1.0, 1.0]
+nrm_min [-1.0, -1.0, 0.0]
+nrm_max [1.0, 1.0, 1.0]
+clip_max_norm 0.0
+cam_near_far [0.1, 1000.0]
+lambda_kd 0.1
+lambda_ks 0.05
+lambda_nrm 0.025
+lambda_nrm2 0.25
+lambda_chroma 0.0
+lambda_diffuse 0.15
+lambda_specular 0.0025
+ref_mesh_studio data/nerf_synthetic/hotdog_nerfstudio
+nvdif_intrinsic 1
+nvdif_extrinsic 0
+waymo 0
+random_textures True
+---------
+Using class DatasetNERF
+Using nerfstudio's version dataset
+self.n_images =  98
+self.resolution =  torch.Size([800, 800])
+self.aspect =  1.0
+DatasetNERF: 98 images with shape [800, 800]
+Preload images
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using class DatasetNERF
+Using nerfstudio's version dataset
+self.n_images =  99
+self.resolution =  torch.Size([800, 800])
+self.aspect =  1.0
+DatasetNERF: 99 images with shape [800, 800]
+Preload images
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+Using nvdif's intrinsic
+use DMTet to create geometry
+Cuda path /software/cuda-11.6
+Encoder output: 32 dims
+Run optimization
+optimize_mesh
+Start enumerate(dataloader_train)
+validate_itr =  0
+ninja: no work to do.
+iter=    0, img_loss=0.586685, reg_loss=0.342743, lr=0.00000, time=804.5 ms, rem=1.12 h
+iter=   10, img_loss=0.468354, reg_loss=0.323221, lr=0.00000, time=567.9 ms, rem=47.23 m
+iter=   20, img_loss=0.407379, reg_loss=0.309550, lr=0.00000, time=560.6 ms, rem=46.53 m
+iter=   30, img_loss=0.427118, reg_loss=0.296425, lr=0.00000, time=526.2 ms, rem=43.58 m
+iter=   40, img_loss=0.407253, reg_loss=0.287407, lr=0.00000, time=489.0 ms, rem=40.43 m
+iter=   50, img_loss=0.401847, reg_loss=0.284084, lr=0.00000, time=530.8 ms, rem=43.79 m
+iter=   60, img_loss=0.404022, reg_loss=0.280486, lr=0.00000, time=527.8 ms, rem=43.45 m
+iter=   70, img_loss=0.410725, reg_loss=0.279517, lr=0.00000, time=569.8 ms, rem=46.82 m
+iter=   80, img_loss=0.418367, reg_loss=0.275834, lr=0.00000, time=533.1 ms, rem=43.71 m
+iter=   90, img_loss=0.413792, reg_loss=0.275911, lr=0.00000, time=581.0 ms, rem=47.54 m
+validate_itr =  100
+iter=  100, img_loss=0.410648, reg_loss=0.272254, lr=0.00000, time=552.2 ms, rem=45.09 m
+iter=  110, img_loss=0.428536, reg_loss=0.269602, lr=0.00000, time=649.2 ms, rem=52.91 m
+iter=  120, img_loss=0.403917, reg_loss=0.266695, lr=0.00000, time=534.8 ms, rem=43.50 m
+iter=  130, img_loss=0.414113, reg_loss=0.266341, lr=0.00000, time=588.7 ms, rem=47.78 m
+iter=  140, img_loss=0.393800, reg_loss=0.262289, lr=0.00000, time=536.7 ms, rem=43.48 m
+iter=  150, img_loss=0.407907, reg_loss=0.262632, lr=0.00000, time=605.7 ms, rem=48.96 m
+iter=  160, img_loss=0.394035, reg_loss=0.259219, lr=0.00000, time=570.1 ms, rem=45.99 m
+iter=  170, img_loss=0.361898, reg_loss=0.257621, lr=0.00000, time=567.2 ms, rem=45.66 m
+iter=  180, img_loss=0.395425, reg_loss=0.253486, lr=0.00000, time=545.6 ms, rem=43.83 m
+iter=  190, img_loss=0.364780, reg_loss=0.251385, lr=0.00000, time=531.1 ms, rem=42.57 m
+validate_itr =  200
+iter=  200, img_loss=0.404920, reg_loss=0.248596, lr=0.00000, time=528.5 ms, rem=42.28 m
+iter=  210, img_loss=0.357603, reg_loss=0.247815, lr=0.00000, time=551.3 ms, rem=44.01 m
+iter=  220, img_loss=0.373397, reg_loss=0.245116, lr=0.00000, time=552.2 ms, rem=43.99 m
+iter=  230, img_loss=0.342561, reg_loss=0.245307, lr=0.00000, time=586.2 ms, rem=46.61 m
+iter=  240, img_loss=0.380186, reg_loss=0.241221, lr=0.00000, time=554.3 ms, rem=43.97 m
+iter=  250, img_loss=0.383881, reg_loss=0.237124, lr=0.00000, time=518.0 ms, rem=41.01 m
+iter=  260, img_loss=0.373268, reg_loss=0.236046, lr=0.00000, time=544.2 ms, rem=42.99 m
+iter=  270, img_loss=0.371085, reg_loss=0.234184, lr=0.00000, time=554.3 ms, rem=43.70 m
+iter=  280, img_loss=0.383850, reg_loss=0.231620, lr=0.00000, time=549.6 ms, rem=43.24 m
+iter=  290, img_loss=0.384747, reg_loss=0.230148, lr=0.00000, time=554.0 ms, rem=43.49 m
+validate_itr =  300
+iter=  300, img_loss=0.389117, reg_loss=0.228533, lr=0.00000, time=563.2 ms, rem=44.12 m
+iter=  310, img_loss=0.395309, reg_loss=0.225759, lr=0.00000, time=567.2 ms, rem=44.34 m
+iter=  320, img_loss=0.392679, reg_loss=0.222984, lr=0.00000, time=550.5 ms, rem=42.94 m
+iter=  330, img_loss=0.383880, reg_loss=0.220313, lr=0.00000, time=542.2 ms, rem=42.20 m
+iter=  340, img_loss=0.372508, reg_loss=0.218047, lr=0.00000, time=542.2 ms, rem=42.11 m
+iter=  350, img_loss=0.375498, reg_loss=0.214792, lr=0.00000, time=518.0 ms, rem=40.14 m
+iter=  360, img_loss=0.397553, reg_loss=0.217290, lr=0.00000, time=613.9 ms, rem=47.48 m
+iter=  370, img_loss=0.361577, reg_loss=0.214438, lr=0.00000, time=584.8 ms, rem=45.13 m
+iter=  380, img_loss=0.360565, reg_loss=0.210162, lr=0.00000, time=555.9 ms, rem=42.80 m
+iter=  390, img_loss=0.375640, reg_loss=0.208378, lr=0.00000, time=559.0 ms, rem=42.95 m
+validate_itr =  400
+iter=  400, img_loss=0.365164, reg_loss=0.206356, lr=0.00000, time=570.9 ms, rem=43.77 m
+iter=  410, img_loss=0.388033, reg_loss=0.204378, lr=0.00000, time=565.6 ms, rem=43.27 m
+iter=  420, img_loss=0.386540, reg_loss=0.201706, lr=0.00000, time=562.2 ms, rem=42.92 m
+iter=  430, img_loss=0.357640, reg_loss=0.199291, lr=0.00000, time=550.7 ms, rem=41.94 m
+iter=  440, img_loss=0.338903, reg_loss=0.197124, lr=0.00000, time=553.7 ms, rem=42.08 m
+iter=  450, img_loss=0.371660, reg_loss=0.196704, lr=0.00000, time=588.1 ms, rem=44.60 m
+iter=  460, img_loss=0.358321, reg_loss=0.195312, lr=0.00000, time=596.3 ms, rem=45.12 m
+iter=  470, img_loss=0.355048, reg_loss=0.191297, lr=0.00000, time=571.3 ms, rem=43.14 m
+iter=  480, img_loss=0.373887, reg_loss=0.189257, lr=0.00000, time=565.2 ms, rem=42.58 m
+iter=  490, img_loss=0.352582, reg_loss=0.185407, lr=0.00000, time=530.6 ms, rem=39.88 m
+validate_itr =  500
+iter=  500, img_loss=0.364656, reg_loss=0.184291, lr=0.00000, time=561.2 ms, rem=42.09 m
+iter=  510, img_loss=0.356288, reg_loss=0.183237, lr=0.00000, time=572.0 ms, rem=42.81 m
+iter=  520, img_loss=0.356983, reg_loss=0.179674, lr=0.00000, time=550.5 ms, rem=41.11 m
+iter=  530, img_loss=0.339275, reg_loss=0.178667, lr=0.00000, time=565.5 ms, rem=42.13 m
+iter=  540, img_loss=0.332032, reg_loss=0.178385, lr=0.00000, time=591.9 ms, rem=43.99 m
+iter=  550, img_loss=0.373546, reg_loss=0.175758, lr=0.00000, time=592.5 ms, rem=43.94 m
+iter=  560, img_loss=0.340421, reg_loss=0.172112, lr=0.00000, time=569.0 ms, rem=42.11 m
+iter=  570, img_loss=0.329865, reg_loss=0.170165, lr=0.00000, time=574.1 ms, rem=42.39 m
+iter=  580, img_loss=0.344098, reg_loss=0.168378, lr=0.00000, time=568.3 ms, rem=41.87 m
+iter=  590, img_loss=0.345501, reg_loss=0.165962, lr=0.00000, time=569.9 ms, rem=41.89 m
+validate_itr =  600
+iter=  600, img_loss=0.336122, reg_loss=0.161959, lr=0.00000, time=542.3 ms, rem=39.77 m
+iter=  610, img_loss=0.351303, reg_loss=0.161969, lr=0.00000, time=573.1 ms, rem=41.93 m
+iter=  620, img_loss=0.395460, reg_loss=0.158846, lr=0.00000, time=563.2 ms, rem=41.12 m
+iter=  630, img_loss=0.360698, reg_loss=0.157530, lr=0.00000, time=565.9 ms, rem=41.21 m
+iter=  640, img_loss=0.351276, reg_loss=0.155270, lr=0.00000, time=574.9 ms, rem=41.78 m
+iter=  650, img_loss=0.318052, reg_loss=0.153033, lr=0.00000, time=563.9 ms, rem=40.89 m
+iter=  660, img_loss=0.358733, reg_loss=0.148289, lr=0.00000, time=526.2 ms, rem=38.07 m
+iter=  670, img_loss=0.344313, reg_loss=0.147564, lr=0.00000, time=553.9 ms, rem=39.97 m
+iter=  680, img_loss=0.358614, reg_loss=0.146799, lr=0.00000, time=576.6 ms, rem=41.52 m
+iter=  690, img_loss=0.337030, reg_loss=0.142698, lr=0.00000, time=537.3 ms, rem=38.59 m
+validate_itr =  700
+iter=  700, img_loss=0.345813, reg_loss=0.140633, lr=0.00000, time=544.4 ms, rem=39.02 m
+iter=  710, img_loss=0.328154, reg_loss=0.138442, lr=0.00000, time=559.4 ms, rem=40.00 m
+iter=  720, img_loss=0.302947, reg_loss=0.137284, lr=0.00000, time=562.7 ms, rem=40.14 m
+iter=  730, img_loss=0.305116, reg_loss=0.135183, lr=0.00000, time=568.6 ms, rem=40.46 m
+iter=  740, img_loss=0.347850, reg_loss=0.132756, lr=0.00000, time=572.3 ms, rem=40.63 m
+iter=  750, img_loss=0.326476, reg_loss=0.130592, lr=0.00000, time=575.7 ms, rem=40.78 m
+iter=  760, img_loss=0.358131, reg_loss=0.129057, lr=0.00000, time=580.9 ms, rem=41.05 m
+iter=  770, img_loss=0.326441, reg_loss=0.127773, lr=0.00000, time=587.2 ms, rem=41.40 m
+iter=  780, img_loss=0.362257, reg_loss=0.125037, lr=0.00000, time=657.0 ms, rem=46.21 m
+iter=  790, img_loss=0.344688, reg_loss=0.122845, lr=0.00000, time=744.2 ms, rem=52.22 m
+validate_itr =  800
+iter=  800, img_loss=0.331276, reg_loss=0.118500, lr=0.00000, time=553.7 ms, rem=38.76 m
+iter=  810, img_loss=0.343115, reg_loss=0.117816, lr=0.00000, time=575.9 ms, rem=40.22 m
+iter=  820, img_loss=0.327564, reg_loss=0.115022, lr=0.00000, time=562.0 ms, rem=39.15 m
+iter=  830, img_loss=0.349535, reg_loss=0.112767, lr=0.00000, time=590.9 ms, rem=41.07 m
+iter=  840, img_loss=0.308123, reg_loss=0.112682, lr=0.00000, time=586.7 ms, rem=40.68 m
+iter=  850, img_loss=0.324130, reg_loss=0.108401, lr=0.00000, time=551.7 ms, rem=38.16 m
+iter=  860, img_loss=0.353653, reg_loss=0.106608, lr=0.00000, time=565.1 ms, rem=38.99 m
+iter=  870, img_loss=0.332887, reg_loss=0.105831, lr=0.00000, time=584.0 ms, rem=40.20 m
+iter=  880, img_loss=0.321629, reg_loss=0.104376, lr=0.00000, time=595.3 ms, rem=40.88 m
+iter=  890, img_loss=0.330611, reg_loss=0.101658, lr=0.00000, time=585.0 ms, rem=40.07 m
+validate_itr =  900
+iter=  900, img_loss=0.318552, reg_loss=0.096134, lr=0.00000, time=526.3 ms, rem=35.96 m
+iter=  910, img_loss=0.319560, reg_loss=0.096555, lr=0.00000, time=569.2 ms, rem=38.80 m
+iter=  920, img_loss=0.368670, reg_loss=0.092818, lr=0.00000, time=552.7 ms, rem=37.58 m
+iter=  930, img_loss=0.357152, reg_loss=0.091840, lr=0.00000, time=567.1 ms, rem=38.47 m
+iter=  940, img_loss=0.329223, reg_loss=0.090072, lr=0.00000, time=572.2 ms, rem=38.72 m
+iter=  950, img_loss=0.344392, reg_loss=0.087689, lr=0.00000, time=559.9 ms, rem=37.80 m
+iter=  960, img_loss=0.362853, reg_loss=0.085013, lr=0.00000, time=557.9 ms, rem=37.56 m
+iter=  970, img_loss=0.349472, reg_loss=0.083602, lr=0.00000, time=567.3 ms, rem=38.11 m
+iter=  980, img_loss=0.355408, reg_loss=0.081089, lr=0.00000, time=564.7 ms, rem=37.83 m
+iter=  990, img_loss=0.360164, reg_loss=0.078503, lr=0.00000, time=556.9 ms, rem=37.22 m
+validate_itr =  1000
+iter= 1000, img_loss=0.324336, reg_loss=0.075924, lr=0.00000, time=551.1 ms, rem=36.74 m
+iter= 1010, img_loss=0.337634, reg_loss=0.074016, lr=0.00000, time=555.9 ms, rem=36.97 m
+iter= 1020, img_loss=0.352087, reg_loss=0.072083, lr=0.00000, time=560.4 ms, rem=37.17 m
+iter= 1030, img_loss=0.335179, reg_loss=0.069089, lr=0.00000, time=538.5 ms, rem=35.63 m
+iter= 1040, img_loss=0.328389, reg_loss=0.067387, lr=0.00000, time=550.2 ms, rem=36.31 m
+iter= 1050, img_loss=0.368692, reg_loss=0.064765, lr=0.00000, time=551.8 ms, rem=36.33 m
+iter= 1060, img_loss=0.358321, reg_loss=0.062969, lr=0.00000, time=586.2 ms, rem=38.50 m
+iter= 1070, img_loss=0.336856, reg_loss=0.062316, lr=0.00000, time=605.2 ms, rem=39.64 m
+iter= 1080, img_loss=0.306921, reg_loss=0.063339, lr=0.00000, time=633.0 ms, rem=41.36 m
+iter= 1090, img_loss=0.350512, reg_loss=0.057433, lr=0.00000, time=592.7 ms, rem=38.62 m
+validate_itr =  1100
+iter= 1100, img_loss=0.309008, reg_loss=0.055798, lr=0.00000, time=590.7 ms, rem=38.40 m
+iter= 1110, img_loss=0.298572, reg_loss=0.053888, lr=0.00000, time=596.3 ms, rem=38.66 m
+iter= 1120, img_loss=0.296307, reg_loss=0.051317, lr=0.00000, time=583.3 ms, rem=37.72 m
+iter= 1130, img_loss=0.340267, reg_loss=0.049931, lr=0.00000, time=613.7 ms, rem=39.58 m
+iter= 1140, img_loss=0.309205, reg_loss=0.047416, lr=0.00000, time=604.3 ms, rem=38.87 m
+iter= 1150, img_loss=0.369910, reg_loss=0.042370, lr=0.00000, time=567.9 ms, rem=36.44 m
+iter= 1160, img_loss=0.319042, reg_loss=0.042057, lr=0.00000, time=589.7 ms, rem=37.74 m
+iter= 1170, img_loss=0.318508, reg_loss=0.041857, lr=0.00000, time=614.2 ms, rem=39.21 m
+iter= 1180, img_loss=0.320054, reg_loss=0.037328, lr=0.00000, time=594.3 ms, rem=37.84 m
+iter= 1190, img_loss=0.349711, reg_loss=0.033542, lr=0.00000, time=569.2 ms, rem=36.14 m
+validate_itr =  1200
+iter= 1200, img_loss=0.349022, reg_loss=0.031842, lr=0.00000, time=572.1 ms, rem=36.23 m
+iter= 1210, img_loss=0.336890, reg_loss=0.031572, lr=0.00000, time=592.1 ms, rem=37.40 m
+iter= 1220, img_loss=0.319536, reg_loss=0.029304, lr=0.00000, time=588.7 ms, rem=37.09 m
+iter= 1230, img_loss=0.318597, reg_loss=0.027978, lr=0.00000, time=602.2 ms, rem=37.84 m
+iter= 1240, img_loss=0.323627, reg_loss=0.024496, lr=0.00000, time=588.0 ms, rem=36.85 m
+iter= 1250, img_loss=0.324363, reg_loss=0.021835, lr=0.00000, time=579.9 ms, rem=36.25 m
+iter= 1260, img_loss=0.343699, reg_loss=0.021817, lr=0.00000, time=592.5 ms, rem=36.93 m
+iter= 1270, img_loss=0.281367, reg_loss=0.024188, lr=0.00000, time=619.8 ms, rem=38.53 m
+iter= 1280, img_loss=0.296316, reg_loss=0.020875, lr=0.00000, time=576.5 ms, rem=35.74 m
+iter= 1290, img_loss=0.327411, reg_loss=0.021546, lr=0.00000, time=589.2 ms, rem=36.43 m
+validate_itr =  1300
+iter= 1300, img_loss=0.321373, reg_loss=0.019528, lr=0.00000, time=561.3 ms, rem=34.61 m
+iter= 1310, img_loss=0.310778, reg_loss=0.020827, lr=0.00000, time=578.8 ms, rem=35.59 m
+iter= 1320, img_loss=0.293386, reg_loss=0.021127, lr=0.00000, time=576.9 ms, rem=35.38 m
+iter= 1330, img_loss=0.347962, reg_loss=0.020656, lr=0.00000, time=577.9 ms, rem=35.35 m
+iter= 1340, img_loss=0.331141, reg_loss=0.022074, lr=0.00000, time=601.9 ms, rem=36.72 m
+iter= 1350, img_loss=0.299298, reg_loss=0.021905, lr=0.00000, time=589.9 ms, rem=35.89 m
+iter= 1360, img_loss=0.325088, reg_loss=0.021572, lr=0.00000, time=587.6 ms, rem=35.65 m
+iter= 1370, img_loss=0.321047, reg_loss=0.024309, lr=0.00000, time=623.2 ms, rem=37.70 m
+iter= 1380, img_loss=0.328130, reg_loss=0.021013, lr=0.00000, time=581.3 ms, rem=35.07 m
+iter= 1390, img_loss=0.287194, reg_loss=0.020281, lr=0.00000, time=565.3 ms, rem=34.01 m
+validate_itr =  1400
+iter= 1400, img_loss=0.293959, reg_loss=0.020180, lr=0.00000, time=570.3 ms, rem=34.22 m
+iter= 1410, img_loss=0.337455, reg_loss=0.020016, lr=0.00000, time=611.5 ms, rem=36.59 m
+iter= 1420, img_loss=0.322408, reg_loss=0.021341, lr=0.00000, time=620.0 ms, rem=36.99 m
+iter= 1430, img_loss=0.328179, reg_loss=0.020839, lr=0.00000, time=611.4 ms, rem=36.38 m
+iter= 1440, img_loss=0.300460, reg_loss=0.021054, lr=0.00000, time=609.2 ms, rem=36.14 m
+iter= 1450, img_loss=0.299724, reg_loss=0.023833, lr=0.00000, time=650.4 ms, rem=38.48 m
+iter= 1460, img_loss=0.311690, reg_loss=0.022222, lr=0.00000, time=626.7 ms, rem=36.98 m
+iter= 1470, img_loss=0.317608, reg_loss=0.022026, lr=0.00000, time=627.8 ms, rem=36.94 m
+iter= 1480, img_loss=0.310298, reg_loss=0.023301, lr=0.00000, time=647.1 ms, rem=37.96 m
+iter= 1490, img_loss=0.315134, reg_loss=0.020293, lr=0.00000, time=603.5 ms, rem=35.31 m
+validate_itr =  1500
+iter= 1500, img_loss=0.342758, reg_loss=0.020696, lr=0.00000, time=617.6 ms, rem=36.03 m
+iter= 1510, img_loss=0.312395, reg_loss=0.021414, lr=0.00000, time=624.0 ms, rem=36.30 m
+iter= 1520, img_loss=0.325073, reg_loss=0.021100, lr=0.00000, time=617.6 ms, rem=35.82 m
+iter= 1530, img_loss=0.309363, reg_loss=0.021000, lr=0.00000, time=614.0 ms, rem=35.51 m
+iter= 1540, img_loss=0.296614, reg_loss=0.024035, lr=0.00000, time=646.6 ms, rem=37.29 m
+iter= 1550, img_loss=0.330508, reg_loss=0.021595, lr=0.00000, time=624.1 ms, rem=35.88 m
+iter= 1560, img_loss=0.338118, reg_loss=0.020776, lr=0.00000, time=616.2 ms, rem=35.33 m
+iter= 1570, img_loss=0.324381, reg_loss=0.020847, lr=0.00000, time=613.7 ms, rem=35.08 m
+iter= 1580, img_loss=0.286095, reg_loss=0.022908, lr=0.00000, time=633.9 ms, rem=36.13 m
+iter= 1590, img_loss=0.308984, reg_loss=0.021868, lr=0.00000, time=622.9 ms, rem=35.40 m
+validate_itr =  1600
+iter= 1600, img_loss=0.343302, reg_loss=0.020437, lr=0.00000, time=608.1 ms, rem=34.46 m
+iter= 1610, img_loss=0.352734, reg_loss=0.020460, lr=0.00000, time=609.9 ms, rem=34.46 m
+iter= 1620, img_loss=0.298448, reg_loss=0.021008, lr=0.00000, time=611.7 ms, rem=34.46 m
+iter= 1630, img_loss=0.333814, reg_loss=0.021538, lr=0.00000, time=625.4 ms, rem=35.12 m
+iter= 1640, img_loss=0.310651, reg_loss=0.020305, lr=0.00000, time=606.6 ms, rem=33.97 m
+iter= 1650, img_loss=0.329017, reg_loss=0.019886, lr=0.00000, time=602.5 ms, rem=33.64 m
+iter= 1660, img_loss=0.331307, reg_loss=0.021320, lr=0.00000, time=622.6 ms, rem=34.66 m
+iter= 1670, img_loss=0.293009, reg_loss=0.021134, lr=0.00000, time=616.1 ms, rem=34.19 m
+iter= 1680, img_loss=0.319612, reg_loss=0.019921, lr=0.00000, time=596.8 ms, rem=33.02 m
+iter= 1690, img_loss=0.296327, reg_loss=0.022475, lr=0.00000, time=628.8 ms, rem=34.69 m
+validate_itr =  1700
+iter= 1700, img_loss=0.299032, reg_loss=0.021479, lr=0.00000, time=623.3 ms, rem=34.28 m
+iter= 1710, img_loss=0.306157, reg_loss=0.021459, lr=0.00000, time=618.5 ms, rem=33.92 m
+iter= 1720, img_loss=0.298446, reg_loss=0.022528, lr=0.00000, time=628.5 ms, rem=34.36 m
+iter= 1730, img_loss=0.325515, reg_loss=0.020750, lr=0.00000, time=612.4 ms, rem=33.37 m
+iter= 1740, img_loss=0.313266, reg_loss=0.020888, lr=0.00000, time=608.3 ms, rem=33.05 m
+iter= 1750, img_loss=0.348152, reg_loss=0.018561, lr=0.00000, time=584.7 ms, rem=31.67 m
+iter= 1760, img_loss=0.294252, reg_loss=0.023138, lr=0.00000, time=634.4 ms, rem=34.26 m
+iter= 1770, img_loss=0.315774, reg_loss=0.020663, lr=0.00000, time=615.5 ms, rem=33.14 m
+iter= 1780, img_loss=0.301574, reg_loss=0.021524, lr=0.00000, time=622.7 ms, rem=33.42 m
+iter= 1790, img_loss=0.311009, reg_loss=0.020943, lr=0.00000, time=607.0 ms, rem=32.48 m
+validate_itr =  1800
+iter= 1800, img_loss=0.297918, reg_loss=0.020643, lr=0.00000, time=607.9 ms, rem=32.42 m
+iter= 1810, img_loss=0.369785, reg_loss=0.020169, lr=0.00000, time=607.0 ms, rem=32.27 m
+iter= 1820, img_loss=0.299227, reg_loss=0.022567, lr=0.00000, time=631.5 ms, rem=33.47 m
+iter= 1830, img_loss=0.303674, reg_loss=0.021907, lr=0.00000, time=623.9 ms, rem=32.96 m
+iter= 1840, img_loss=0.279463, reg_loss=0.021759, lr=0.00000, time=619.3 ms, rem=32.62 m
+iter= 1850, img_loss=0.292106, reg_loss=0.022712, lr=0.00000, time=630.7 ms, rem=33.11 m
+iter= 1860, img_loss=0.301859, reg_loss=0.022969, lr=0.00000, time=636.2 ms, rem=33.30 m
+iter= 1870, img_loss=0.324179, reg_loss=0.020530, lr=0.00000, time=612.3 ms, rem=31.94 m
+iter= 1880, img_loss=0.328425, reg_loss=0.020145, lr=0.00000, time=602.0 ms, rem=31.31 m
+iter= 1890, img_loss=0.309095, reg_loss=0.020431, lr=0.00000, time=603.1 ms, rem=31.26 m
+validate_itr =  1900
+iter= 1900, img_loss=0.335932, reg_loss=0.019523, lr=0.00000, time=595.0 ms, rem=30.74 m
+iter= 1910, img_loss=0.327268, reg_loss=0.019230, lr=0.00000, time=590.6 ms, rem=30.41 m
+iter= 1920, img_loss=0.304375, reg_loss=0.022173, lr=0.00000, time=623.3 ms, rem=32.00 m
+iter= 1930, img_loss=0.305266, reg_loss=0.020628, lr=0.00000, time=603.5 ms, rem=30.88 m
+iter= 1940, img_loss=0.331269, reg_loss=0.019955, lr=0.00000, time=602.8 ms, rem=30.74 m
+iter= 1950, img_loss=0.277913, reg_loss=0.024445, lr=0.00000, time=655.7 ms, rem=33.33 m
+iter= 1960, img_loss=0.325148, reg_loss=0.022106, lr=0.00000, time=634.7 ms, rem=32.16 m
+iter= 1970, img_loss=0.311247, reg_loss=0.021058, lr=0.00000, time=616.0 ms, rem=31.11 m
+iter= 1980, img_loss=0.328465, reg_loss=0.021135, lr=0.00000, time=614.4 ms, rem=30.92 m
+iter= 1990, img_loss=0.316194, reg_loss=0.022979, lr=0.00000, time=637.9 ms, rem=32.00 m
+validate_itr =  2000
+iter= 2000, img_loss=0.324483, reg_loss=0.021993, lr=0.00000, time=628.1 ms, rem=31.41 m
+iter= 2010, img_loss=0.323853, reg_loss=0.019562, lr=0.00000, time=603.3 ms, rem=30.06 m
+iter= 2020, img_loss=0.302074, reg_loss=0.021531, lr=0.00000, time=619.6 ms, rem=30.77 m
+iter= 2030, img_loss=0.235445, reg_loss=0.022453, lr=0.00000, time=625.7 ms, rem=30.97 m
+iter= 2040, img_loss=0.321114, reg_loss=0.021371, lr=0.00000, time=622.0 ms, rem=30.68 m
+iter= 2050, img_loss=0.300602, reg_loss=0.022822, lr=0.00000, time=639.2 ms, rem=31.43 m
+iter= 2060, img_loss=0.337458, reg_loss=0.019614, lr=0.00000, time=593.7 ms, rem=29.09 m
+iter= 2070, img_loss=0.309076, reg_loss=0.019607, lr=0.00000, time=599.2 ms, rem=29.26 m
+iter= 2080, img_loss=0.358827, reg_loss=0.019070, lr=0.00000, time=590.8 ms, rem=28.75 m
+iter= 2090, img_loss=0.311969, reg_loss=0.020642, lr=0.00000, time=607.0 ms, rem=29.44 m
+validate_itr =  2100
+iter= 2100, img_loss=0.280277, reg_loss=0.020887, lr=0.00000, time=605.8 ms, rem=29.28 m
+iter= 2110, img_loss=0.323010, reg_loss=0.020554, lr=0.00000, time=609.0 ms, rem=29.33 m
+iter= 2120, img_loss=0.335055, reg_loss=0.019723, lr=0.00000, time=596.4 ms, rem=28.62 m
+iter= 2130, img_loss=0.292031, reg_loss=0.020802, lr=0.00000, time=610.2 ms, rem=29.19 m
+iter= 2140, img_loss=0.285833, reg_loss=0.020170, lr=0.00000, time=600.6 ms, rem=28.63 m
+iter= 2150, img_loss=0.300039, reg_loss=0.020870, lr=0.00000, time=609.6 ms, rem=28.96 m
+iter= 2160, img_loss=0.280974, reg_loss=0.022749, lr=0.00000, time=630.9 ms, rem=29.86 m
+iter= 2170, img_loss=0.306573, reg_loss=0.021276, lr=0.00000, time=618.3 ms, rem=29.16 m
+iter= 2180, img_loss=0.308151, reg_loss=0.020562, lr=0.00000, time=600.3 ms, rem=28.22 m
+iter= 2190, img_loss=0.328399, reg_loss=0.021227, lr=0.00000, time=620.0 ms, rem=29.04 m
+validate_itr =  2200
+iter= 2200, img_loss=0.301659, reg_loss=0.020934, lr=0.00000, time=608.5 ms, rem=28.40 m
+iter= 2210, img_loss=0.286127, reg_loss=0.023585, lr=0.00000, time=639.2 ms, rem=29.72 m
+iter= 2220, img_loss=0.273646, reg_loss=0.022628, lr=0.00000, time=627.4 ms, rem=29.07 m
+iter= 2230, img_loss=0.310784, reg_loss=0.022430, lr=0.00000, time=631.3 ms, rem=29.14 m
+iter= 2240, img_loss=0.314794, reg_loss=0.020889, lr=0.00000, time=610.0 ms, rem=28.06 m
+iter= 2250, img_loss=0.305257, reg_loss=0.022221, lr=0.00000, time=629.7 ms, rem=28.86 m
+iter= 2260, img_loss=0.272063, reg_loss=0.021546, lr=0.00000, time=613.7 ms, rem=28.03 m
+iter= 2270, img_loss=0.302647, reg_loss=0.021271, lr=0.00000, time=616.6 ms, rem=28.05 m
+iter= 2280, img_loss=0.300850, reg_loss=0.020347, lr=0.00000, time=604.1 ms, rem=27.38 m
+iter= 2290, img_loss=0.322045, reg_loss=0.020817, lr=0.00000, time=612.2 ms, rem=27.65 m
+validate_itr =  2300
+iter= 2300, img_loss=0.352039, reg_loss=0.020437, lr=0.00000, time=611.0 ms, rem=27.50 m
+iter= 2310, img_loss=0.304725, reg_loss=0.021665, lr=0.00000, time=620.6 ms, rem=27.83 m
+iter= 2320, img_loss=0.311786, reg_loss=0.021652, lr=0.00000, time=625.3 ms, rem=27.93 m
+iter= 2330, img_loss=0.297800, reg_loss=0.021977, lr=0.00000, time=621.2 ms, rem=27.64 m
+iter= 2340, img_loss=0.311536, reg_loss=0.022332, lr=0.00000, time=623.6 ms, rem=27.65 m
+iter= 2350, img_loss=0.314300, reg_loss=0.021657, lr=0.00000, time=620.0 ms, rem=27.38 m
+iter= 2360, img_loss=0.302214, reg_loss=0.022686, lr=0.00000, time=627.3 ms, rem=27.60 m
+iter= 2370, img_loss=0.319496, reg_loss=0.021928, lr=0.00000, time=624.8 ms, rem=27.39 m
+iter= 2380, img_loss=0.294542, reg_loss=0.021503, lr=0.00000, time=619.8 ms, rem=27.06 m
+iter= 2390, img_loss=0.345694, reg_loss=0.019155, lr=0.00000, time=594.7 ms, rem=25.87 m
+validate_itr =  2400
+iter= 2400, img_loss=0.296884, reg_loss=0.021259, lr=0.00000, time=611.9 ms, rem=26.52 m
+iter= 2410, img_loss=0.279724, reg_loss=0.021602, lr=0.00000, time=617.0 ms, rem=26.63 m
+iter= 2420, img_loss=0.294197, reg_loss=0.020948, lr=0.00000, time=613.4 ms, rem=26.38 m
+iter= 2430, img_loss=0.300793, reg_loss=0.020836, lr=0.00000, time=609.1 ms, rem=26.09 m
+iter= 2440, img_loss=0.306778, reg_loss=0.020198, lr=0.00000, time=607.4 ms, rem=25.92 m
+iter= 2450, img_loss=0.306328, reg_loss=0.021742, lr=0.00000, time=619.3 ms, rem=26.32 m
+iter= 2460, img_loss=0.323456, reg_loss=0.019686, lr=0.00000, time=600.2 ms, rem=25.41 m
+iter= 2470, img_loss=0.271195, reg_loss=0.022191, lr=0.00000, time=621.6 ms, rem=26.21 m
+iter= 2480, img_loss=0.304190, reg_loss=0.021189, lr=0.00000, time=609.9 ms, rem=25.61 m
+iter= 2490, img_loss=0.291398, reg_loss=0.020731, lr=0.00000, time=610.8 ms, rem=25.55 m
+validate_itr =  2500
+iter= 2500, img_loss=0.311953, reg_loss=0.019822, lr=0.00000, time=599.4 ms, rem=24.97 m
+iter= 2510, img_loss=0.280541, reg_loss=0.022344, lr=0.00000, time=621.3 ms, rem=25.78 m
+iter= 2520, img_loss=0.287261, reg_loss=0.021754, lr=0.00000, time=616.5 ms, rem=25.48 m
+iter= 2530, img_loss=0.286727, reg_loss=0.022574, lr=0.00000, time=632.3 ms, rem=26.03 m
+iter= 2540, img_loss=0.336075, reg_loss=0.020299, lr=0.00000, time=605.4 ms, rem=24.82 m
+iter= 2550, img_loss=0.294632, reg_loss=0.020449, lr=0.00000, time=600.9 ms, rem=24.54 m
+iter= 2560, img_loss=0.304781, reg_loss=0.021356, lr=0.00000, time=618.1 ms, rem=25.14 m
+iter= 2570, img_loss=0.310075, reg_loss=0.019684, lr=0.00000, time=591.5 ms, rem=23.96 m
+iter= 2580, img_loss=0.276950, reg_loss=0.020061, lr=0.00000, time=595.1 ms, rem=24.00 m
+iter= 2590, img_loss=0.274059, reg_loss=0.022915, lr=0.00000, time=631.2 ms, rem=25.35 m
+validate_itr =  2600
+iter= 2600, img_loss=0.298559, reg_loss=0.022514, lr=0.00000, time=625.9 ms, rem=25.04 m
+iter= 2610, img_loss=0.344465, reg_loss=0.018898, lr=0.00000, time=583.1 ms, rem=23.23 m
+iter= 2620, img_loss=0.288223, reg_loss=0.020491, lr=0.00000, time=601.8 ms, rem=23.87 m
+iter= 2630, img_loss=0.277033, reg_loss=0.021418, lr=0.00000, time=613.0 ms, rem=24.21 m
+iter= 2640, img_loss=0.294728, reg_loss=0.021185, lr=0.00000, time=616.2 ms, rem=24.24 m
+iter= 2650, img_loss=0.278830, reg_loss=0.021595, lr=0.00000, time=610.9 ms, rem=23.93 m
+iter= 2660, img_loss=0.295515, reg_loss=0.021463, lr=0.00000, time=619.0 ms, rem=24.14 m
+iter= 2670, img_loss=0.285579, reg_loss=0.020392, lr=0.00000, time=604.0 ms, rem=23.46 m
+iter= 2680, img_loss=0.259977, reg_loss=0.023947, lr=0.00000, time=650.7 ms, rem=25.16 m
+iter= 2690, img_loss=0.326795, reg_loss=0.022073, lr=0.00000, time=625.8 ms, rem=24.09 m
+validate_itr =  2700
+iter= 2700, img_loss=0.304483, reg_loss=0.019965, lr=0.00000, time=600.5 ms, rem=23.02 m
+iter= 2710, img_loss=0.282992, reg_loss=0.021261, lr=0.00000, time=604.0 ms, rem=23.05 m
+iter= 2720, img_loss=0.297600, reg_loss=0.019335, lr=0.00000, time=583.8 ms, rem=22.18 m
+iter= 2730, img_loss=0.293910, reg_loss=0.019767, lr=0.00000, time=591.9 ms, rem=22.39 m
+iter= 2740, img_loss=0.283761, reg_loss=0.021665, lr=0.00000, time=614.9 ms, rem=23.16 m
+iter= 2750, img_loss=0.343177, reg_loss=0.020756, lr=0.00000, time=610.8 ms, rem=22.91 m
+iter= 2760, img_loss=0.317846, reg_loss=0.022631, lr=0.00000, time=635.7 ms, rem=23.73 m
+iter= 2770, img_loss=0.267391, reg_loss=0.021946, lr=0.00000, time=615.0 ms, rem=22.86 m
+iter= 2780, img_loss=0.243826, reg_loss=0.022014, lr=0.00000, time=611.6 ms, rem=22.63 m
+iter= 2790, img_loss=0.318063, reg_loss=0.020966, lr=0.00000, time=613.6 ms, rem=22.60 m
+validate_itr =  2800
+iter= 2800, img_loss=0.308561, reg_loss=0.021113, lr=0.00000, time=611.4 ms, rem=22.42 m
+iter= 2810, img_loss=0.318085, reg_loss=0.021288, lr=0.00000, time=614.1 ms, rem=22.42 m
+iter= 2820, img_loss=0.305801, reg_loss=0.022100, lr=0.00000, time=624.4 ms, rem=22.69 m
+iter= 2830, img_loss=0.327968, reg_loss=0.019678, lr=0.00000, time=595.3 ms, rem=21.53 m
+iter= 2840, img_loss=0.296432, reg_loss=0.023213, lr=0.00000, time=638.3 ms, rem=22.98 m
+iter= 2850, img_loss=0.293432, reg_loss=0.019627, lr=0.00000, time=590.0 ms, rem=21.14 m
+iter= 2860, img_loss=0.256248, reg_loss=0.022915, lr=0.00000, time=626.0 ms, rem=22.33 m
+iter= 2870, img_loss=0.312643, reg_loss=0.020634, lr=0.00000, time=603.2 ms, rem=21.41 m
+iter= 2880, img_loss=0.270285, reg_loss=0.021602, lr=0.00000, time=606.7 ms, rem=21.44 m
+iter= 2890, img_loss=0.278858, reg_loss=0.022435, lr=0.00000, time=621.4 ms, rem=21.85 m
+validate_itr =  2900
+iter= 2900, img_loss=0.252324, reg_loss=0.024684, lr=0.00000, time=641.3 ms, rem=22.45 m
+iter= 2910, img_loss=0.313428, reg_loss=0.022178, lr=0.00000, time=626.0 ms, rem=21.81 m
+iter= 2920, img_loss=0.313152, reg_loss=0.020566, lr=0.00000, time=603.9 ms, rem=20.93 m
+iter= 2930, img_loss=0.281599, reg_loss=0.022191, lr=0.00000, time=623.8 ms, rem=21.52 m
+iter= 2940, img_loss=0.285086, reg_loss=0.021156, lr=0.00000, time=608.1 ms, rem=20.88 m
+iter= 2950, img_loss=0.277587, reg_loss=0.020636, lr=0.00000, time=597.6 ms, rem=20.42 m
+iter= 2960, img_loss=0.303720, reg_loss=0.019382, lr=0.00000, time=590.0 ms, rem=20.06 m
+iter= 2970, img_loss=0.306525, reg_loss=0.018932, lr=0.00000, time=581.0 ms, rem=19.66 m
+iter= 2980, img_loss=0.301314, reg_loss=0.018769, lr=0.00000, time=579.3 ms, rem=19.50 m
+iter= 2990, img_loss=0.280181, reg_loss=0.021772, lr=0.00000, time=614.2 ms, rem=20.58 m
+validate_itr =  3000
+iter= 3000, img_loss=0.280431, reg_loss=0.020623, lr=0.00000, time=598.7 ms, rem=19.96 m
+iter= 3010, img_loss=0.270178, reg_loss=0.022595, lr=0.00000, time=620.4 ms, rem=20.58 m
+iter= 3020, img_loss=0.308162, reg_loss=0.019820, lr=0.00000, time=591.4 ms, rem=19.52 m
+iter= 3030, img_loss=0.320644, reg_loss=0.021264, lr=0.00000, time=612.7 ms, rem=20.12 m
+iter= 3040, img_loss=0.291682, reg_loss=0.020378, lr=0.00000, time=601.1 ms, rem=19.63 m
+iter= 3050, img_loss=0.320204, reg_loss=0.019835, lr=0.00000, time=595.6 ms, rem=19.36 m
+iter= 3060, img_loss=0.332479, reg_loss=0.019887, lr=0.00000, time=594.6 ms, rem=19.23 m
+iter= 3070, img_loss=0.261137, reg_loss=0.023128, lr=0.00000, time=628.9 ms, rem=20.23 m
+iter= 3080, img_loss=0.287452, reg_loss=0.020527, lr=0.00000, time=597.0 ms, rem=19.10 m
+iter= 3090, img_loss=0.295118, reg_loss=0.020377, lr=0.00000, time=602.5 ms, rem=19.18 m
+validate_itr =  3100
+iter= 3100, img_loss=0.307523, reg_loss=0.020917, lr=0.00000, time=602.1 ms, rem=19.07 m
+iter= 3110, img_loss=0.312642, reg_loss=0.020747, lr=0.00000, time=605.7 ms, rem=19.08 m
+iter= 3120, img_loss=0.301271, reg_loss=0.022070, lr=0.00000, time=624.9 ms, rem=19.58 m
+iter= 3130, img_loss=0.302195, reg_loss=0.020658, lr=0.00000, time=604.4 ms, rem=18.84 m
+iter= 3140, img_loss=0.304304, reg_loss=0.021314, lr=0.00000, time=608.1 ms, rem=18.85 m
+iter= 3150, img_loss=0.305955, reg_loss=0.020368, lr=0.00000, time=599.3 ms, rem=18.48 m
+iter= 3160, img_loss=0.273318, reg_loss=0.020093, lr=0.00000, time=592.1 ms, rem=18.16 m
+iter= 3170, img_loss=0.303863, reg_loss=0.020498, lr=0.00000, time=604.0 ms, rem=18.42 m
+iter= 3180, img_loss=0.307740, reg_loss=0.020218, lr=0.00000, time=600.2 ms, rem=18.21 m
+iter= 3190, img_loss=0.279208, reg_loss=0.022407, lr=0.00000, time=625.6 ms, rem=18.87 m
+validate_itr =  3200
+iter= 3200, img_loss=0.237003, reg_loss=0.023384, lr=0.00000, time=624.3 ms, rem=18.73 m
+iter= 3210, img_loss=0.298694, reg_loss=0.022895, lr=0.00000, time=632.2 ms, rem=18.86 m
+iter= 3220, img_loss=0.315275, reg_loss=0.019766, lr=0.00000, time=597.6 ms, rem=17.73 m
+iter= 3230, img_loss=0.281605, reg_loss=0.021937, lr=0.00000, time=613.5 ms, rem=18.10 m
+iter= 3240, img_loss=0.300861, reg_loss=0.021420, lr=0.00000, time=617.9 ms, rem=18.12 m
+iter= 3250, img_loss=0.334317, reg_loss=0.019387, lr=0.00000, time=589.2 ms, rem=17.19 m
+iter= 3260, img_loss=0.256499, reg_loss=0.021334, lr=0.00000, time=607.7 ms, rem=17.62 m
+iter= 3270, img_loss=0.292814, reg_loss=0.021166, lr=0.00000, time=610.9 ms, rem=17.62 m
+iter= 3280, img_loss=0.303073, reg_loss=0.021694, lr=0.00000, time=621.6 ms, rem=17.82 m
+iter= 3290, img_loss=0.283504, reg_loss=0.021301, lr=0.00000, time=611.9 ms, rem=17.44 m
+validate_itr =  3300
+iter= 3300, img_loss=0.253065, reg_loss=0.021960, lr=0.00000, time=615.7 ms, rem=17.44 m
+iter= 3310, img_loss=0.320452, reg_loss=0.019391, lr=0.00000, time=589.0 ms, rem=16.59 m
+iter= 3320, img_loss=0.299901, reg_loss=0.020409, lr=0.00000, time=603.1 ms, rem=16.89 m
+iter= 3330, img_loss=0.292187, reg_loss=0.022222, lr=0.00000, time=625.1 ms, rem=17.40 m
+iter= 3340, img_loss=0.282873, reg_loss=0.022105, lr=0.00000, time=620.5 ms, rem=17.17 m
+iter= 3350, img_loss=0.308862, reg_loss=0.018983, lr=0.00000, time=583.1 ms, rem=16.03 m
+iter= 3360, img_loss=0.287635, reg_loss=0.020423, lr=0.00000, time=595.5 ms, rem=16.28 m
+iter= 3370, img_loss=0.332545, reg_loss=0.019704, lr=0.00000, time=593.9 ms, rem=16.14 m
+iter= 3380, img_loss=0.316442, reg_loss=0.019562, lr=0.00000, time=585.2 ms, rem=15.80 m
+iter= 3390, img_loss=0.295166, reg_loss=0.020328, lr=0.00000, time=596.6 ms, rem=16.01 m
+validate_itr =  3400
+iter= 3400, img_loss=0.291223, reg_loss=0.020883, lr=0.00000, time=603.6 ms, rem=16.09 m
+iter= 3410, img_loss=0.298832, reg_loss=0.020414, lr=0.00000, time=596.4 ms, rem=15.81 m
+iter= 3420, img_loss=0.228984, reg_loss=0.024697, lr=0.00000, time=646.9 ms, rem=17.04 m
+iter= 3430, img_loss=0.290923, reg_loss=0.019231, lr=0.00000, time=584.4 ms, rem=15.29 m
+iter= 3440, img_loss=0.267967, reg_loss=0.023153, lr=0.00000, time=627.8 ms, rem=16.32 m
+iter= 3450, img_loss=0.242015, reg_loss=0.023655, lr=0.00000, time=636.4 ms, rem=16.44 m
+iter= 3460, img_loss=0.286452, reg_loss=0.020462, lr=0.00000, time=602.0 ms, rem=15.45 m
+iter= 3470, img_loss=0.284690, reg_loss=0.020162, lr=0.00000, time=600.2 ms, rem=15.31 m
+iter= 3480, img_loss=0.315616, reg_loss=0.022153, lr=0.00000, time=627.3 ms, rem=15.89 m
+iter= 3490, img_loss=0.287585, reg_loss=0.021748, lr=0.00000, time=617.1 ms, rem=15.53 m
+validate_itr =  3500
+iter= 3500, img_loss=0.286187, reg_loss=0.020997, lr=0.00000, time=601.9 ms, rem=15.05 m
+iter= 3510, img_loss=0.258531, reg_loss=0.023158, lr=0.00000, time=633.6 ms, rem=15.74 m
+iter= 3520, img_loss=0.287479, reg_loss=0.020106, lr=0.00000, time=598.7 ms, rem=14.77 m
+iter= 3530, img_loss=0.309019, reg_loss=0.018777, lr=0.00000, time=582.7 ms, rem=14.28 m
+iter= 3540, img_loss=0.312673, reg_loss=0.019489, lr=0.00000, time=587.0 ms, rem=14.28 m
+iter= 3550, img_loss=0.316669, reg_loss=0.020702, lr=0.00000, time=609.9 ms, rem=14.74 m
+iter= 3560, img_loss=0.306712, reg_loss=0.020895, lr=0.00000, time=610.5 ms, rem=14.65 m
+iter= 3570, img_loss=0.302434, reg_loss=0.020959, lr=0.00000, time=603.6 ms, rem=14.39 m
+End of OptiXStateWrapper 
+OptiXStateWrapper destructor 
+iter= 3580, img_loss=0.298368, reg_loss=0.020256, lr=0.00000, time=600.7 ms, rem=14.22 m
+iter= 3590, img_loss=0.304229, reg_loss=0.021982, lr=0.00000, time=619.8 ms, rem=14.57 m
+validate_itr =  3600
+iter= 3600, img_loss=0.258372, reg_loss=0.022369, lr=0.00000, time=621.9 ms, rem=14.51 m
+iter= 3610, img_loss=0.260983, reg_loss=0.021890, lr=0.00000, time=618.8 ms, rem=14.34 m
+iter= 3620, img_loss=0.260357, reg_loss=0.020502, lr=0.00000, time=602.1 ms, rem=13.85 m
+iter= 3630, img_loss=0.304144, reg_loss=0.022005, lr=0.00000, time=622.7 ms, rem=14.22 m
+iter= 3640, img_loss=0.309071, reg_loss=0.021602, lr=0.00000, time=716.9 ms, rem=16.25 m
+iter= 3650, img_loss=0.342346, reg_loss=0.020414, lr=0.00000, time=605.6 ms, rem=13.63 m
+iter= 3660, img_loss=0.342363, reg_loss=0.019607, lr=0.00000, time=593.8 ms, rem=13.26 m
+iter= 3670, img_loss=0.318597, reg_loss=0.019216, lr=0.00000, time=590.7 ms, rem=13.09 m
+iter= 3680, img_loss=0.290164, reg_loss=0.021634, lr=0.00000, time=621.0 ms, rem=13.66 m
+iter= 3690, img_loss=0.302358, reg_loss=0.020529, lr=0.00000, time=598.5 ms, rem=13.07 m
+validate_itr =  3700
+iter= 3700, img_loss=0.297878, reg_loss=0.019296, lr=0.00000, time=586.8 ms, rem=12.71 m
+iter= 3710, img_loss=0.334476, reg_loss=0.021417, lr=0.00000, time=616.0 ms, rem=13.24 m
+iter= 3720, img_loss=0.299551, reg_loss=0.021340, lr=0.00000, time=606.3 ms, rem=12.93 m
+iter= 3730, img_loss=0.304317, reg_loss=0.020103, lr=0.00000, time=596.7 ms, rem=12.63 m
+iter= 3740, img_loss=0.343623, reg_loss=0.019196, lr=0.00000, time=590.5 ms, rem=12.40 m
+iter= 3750, img_loss=0.299971, reg_loss=0.019005, lr=0.00000, time=584.0 ms, rem=12.17 m
+iter= 3760, img_loss=0.309735, reg_loss=0.019943, lr=0.00000, time=595.3 ms, rem=12.30 m
+iter= 3770, img_loss=0.286204, reg_loss=0.021813, lr=0.00000, time=612.3 ms, rem=12.55 m
+iter= 3780, img_loss=0.293544, reg_loss=0.019816, lr=0.00000, time=591.7 ms, rem=12.03 m
+iter= 3790, img_loss=0.269046, reg_loss=0.022440, lr=0.00000, time=624.0 ms, rem=12.58 m
+validate_itr =  3800
+iter= 3800, img_loss=0.265880, reg_loss=0.023451, lr=0.00000, time=635.3 ms, rem=12.71 m
+iter= 3810, img_loss=0.242527, reg_loss=0.023593, lr=0.00000, time=630.3 ms, rem=12.50 m
+iter= 3820, img_loss=0.304735, reg_loss=0.021820, lr=0.00000, time=616.0 ms, rem=12.11 m
+iter= 3830, img_loss=0.298309, reg_loss=0.019745, lr=0.00000, time=593.1 ms, rem=11.57 m
+iter= 3840, img_loss=0.321079, reg_loss=0.020359, lr=0.00000, time=607.0 ms, rem=11.74 m
+iter= 3850, img_loss=0.305761, reg_loss=0.020292, lr=0.00000, time=596.7 ms, rem=11.44 m
+iter= 3860, img_loss=0.311266, reg_loss=0.022065, lr=0.00000, time=621.7 ms, rem=11.81 m
+iter= 3870, img_loss=0.315605, reg_loss=0.021322, lr=0.00000, time=615.5 ms, rem=11.59 m
+iter= 3880, img_loss=0.271028, reg_loss=0.022005, lr=0.00000, time=620.4 ms, rem=11.58 m
+iter= 3890, img_loss=0.310130, reg_loss=0.020542, lr=0.00000, time=607.8 ms, rem=11.24 m
+validate_itr =  3900
+iter= 3900, img_loss=0.309382, reg_loss=0.020164, lr=0.00000, time=597.6 ms, rem=10.96 m
+iter= 3910, img_loss=0.351280, reg_loss=0.018807, lr=0.00000, time=585.1 ms, rem=10.63 m
+iter= 3920, img_loss=0.250891, reg_loss=0.021652, lr=0.00000, time=613.1 ms, rem=11.04 m
+iter= 3930, img_loss=0.309040, reg_loss=0.020903, lr=0.00000, time=608.2 ms, rem=10.85 m
+iter= 3940, img_loss=0.269397, reg_loss=0.021574, lr=0.00000, time=615.5 ms, rem=10.87 m
+iter= 3950, img_loss=0.309188, reg_loss=0.020568, lr=0.00000, time=603.7 ms, rem=10.56 m
+iter= 3960, img_loss=0.267371, reg_loss=0.021860, lr=0.00000, time=613.2 ms, rem=10.63 m
+iter= 3970, img_loss=0.302232, reg_loss=0.019519, lr=0.00000, time=589.7 ms, rem=10.12 m
+iter= 3980, img_loss=0.331388, reg_loss=0.019295, lr=0.00000, time=590.6 ms, rem=10.04 m
+iter= 3990, img_loss=0.257601, reg_loss=0.020172, lr=0.00000, time=595.7 ms, rem=10.03 m
+validate_itr =  4000
+iter= 4000, img_loss=0.313285, reg_loss=0.019313, lr=0.00000, time=589.4 ms, rem=9.82 m
+iter= 4010, img_loss=0.265336, reg_loss=0.022404, lr=0.00000, time=620.2 ms, rem=10.23 m
+iter= 4020, img_loss=0.307730, reg_loss=0.019869, lr=0.00000, time=590.4 ms, rem=9.64 m
+iter= 4030, img_loss=0.276654, reg_loss=0.021539, lr=0.00000, time=613.6 ms, rem=9.92 m
+iter= 4040, img_loss=0.275047, reg_loss=0.021625, lr=0.00000, time=614.1 ms, rem=9.83 m
+iter= 4050, img_loss=0.274624, reg_loss=0.022342, lr=0.00000, time=622.1 ms, rem=9.85 m
+iter= 4060, img_loss=0.306370, reg_loss=0.020447, lr=0.00000, time=601.6 ms, rem=9.43 m
+iter= 4070, img_loss=0.282287, reg_loss=0.020631, lr=0.00000, time=602.3 ms, rem=9.34 m
+iter= 4080, img_loss=0.309349, reg_loss=0.019058, lr=0.00000, time=582.6 ms, rem=8.93 m
+iter= 4090, img_loss=0.351422, reg_loss=0.020664, lr=0.00000, time=611.8 ms, rem=9.28 m
+validate_itr =  4100
+iter= 4100, img_loss=0.270358, reg_loss=0.021568, lr=0.00000, time=610.1 ms, rem=9.15 m
+iter= 4110, img_loss=0.295348, reg_loss=0.020910, lr=0.00000, time=604.1 ms, rem=8.96 m
+iter= 4120, img_loss=0.336542, reg_loss=0.019903, lr=0.00000, time=593.9 ms, rem=8.71 m
+iter= 4130, img_loss=0.315706, reg_loss=0.019559, lr=0.00000, time=595.9 ms, rem=8.64 m
+iter= 4140, img_loss=0.289529, reg_loss=0.019759, lr=0.00000, time=592.0 ms, rem=8.49 m
+iter= 4150, img_loss=0.297720, reg_loss=0.021093, lr=0.00000, time=609.8 ms, rem=8.64 m
+iter= 4160, img_loss=0.295961, reg_loss=0.020582, lr=0.00000, time=604.6 ms, rem=8.46 m
+iter= 4170, img_loss=0.300049, reg_loss=0.021645, lr=0.00000, time=614.3 ms, rem=8.50 m
+iter= 4180, img_loss=0.252961, reg_loss=0.021413, lr=0.00000, time=608.1 ms, rem=8.31 m
+iter= 4190, img_loss=0.290220, reg_loss=0.022209, lr=0.00000, time=621.3 ms, rem=8.39 m
+validate_itr =  4200
+iter= 4200, img_loss=0.267769, reg_loss=0.022274, lr=0.00000, time=622.5 ms, rem=8.30 m
+iter= 4210, img_loss=0.284326, reg_loss=0.021904, lr=0.00000, time=617.8 ms, rem=8.13 m
+iter= 4220, img_loss=0.311614, reg_loss=0.020014, lr=0.00000, time=594.9 ms, rem=7.73 m
+iter= 4230, img_loss=0.310815, reg_loss=0.020235, lr=0.00000, time=597.3 ms, rem=7.67 m
+iter= 4240, img_loss=0.232506, reg_loss=0.023422, lr=0.00000, time=635.0 ms, rem=8.04 m
+iter= 4250, img_loss=0.272439, reg_loss=0.021630, lr=0.00000, time=618.5 ms, rem=7.73 m
+iter= 4260, img_loss=0.325049, reg_loss=0.021361, lr=0.00000, time=614.1 ms, rem=7.57 m
+iter= 4270, img_loss=0.253596, reg_loss=0.022527, lr=0.00000, time=625.7 ms, rem=7.61 m
+iter= 4280, img_loss=0.288372, reg_loss=0.020112, lr=0.00000, time=594.0 ms, rem=7.13 m
+iter= 4290, img_loss=0.259192, reg_loss=0.020811, lr=0.00000, time=601.3 ms, rem=7.12 m
+validate_itr =  4300
+iter= 4300, img_loss=0.285604, reg_loss=0.021513, lr=0.00000, time=614.1 ms, rem=7.16 m
+iter= 4310, img_loss=0.307655, reg_loss=0.020541, lr=0.00000, time=604.8 ms, rem=6.96 m
+iter= 4320, img_loss=0.297416, reg_loss=0.022397, lr=0.00000, time=626.0 ms, rem=7.09 m
+iter= 4330, img_loss=0.350982, reg_loss=0.018807, lr=0.00000, time=584.8 ms, rem=6.53 m
+iter= 4340, img_loss=0.284345, reg_loss=0.020890, lr=0.00000, time=602.4 ms, rem=6.63 m
+iter= 4350, img_loss=0.289044, reg_loss=0.020457, lr=0.00000, time=597.4 ms, rem=6.47 m
+iter= 4360, img_loss=0.329173, reg_loss=0.019142, lr=0.00000, time=585.8 ms, rem=6.25 m
+iter= 4370, img_loss=0.280180, reg_loss=0.021335, lr=0.00000, time=602.1 ms, rem=6.32 m
+iter= 4380, img_loss=0.308057, reg_loss=0.020200, lr=0.00000, time=597.5 ms, rem=6.17 m
+iter= 4390, img_loss=0.293076, reg_loss=0.020597, lr=0.00000, time=599.8 ms, rem=6.10 m
+validate_itr =  4400
+iter= 4400, img_loss=0.285839, reg_loss=0.022030, lr=0.00000, time=624.6 ms, rem=6.25 m
+iter= 4410, img_loss=0.302389, reg_loss=0.019641, lr=0.00000, time=591.4 ms, rem=5.82 m
+iter= 4420, img_loss=0.274102, reg_loss=0.023768, lr=0.00000, time=649.0 ms, rem=6.27 m
+iter= 4430, img_loss=0.285552, reg_loss=0.022426, lr=0.00000, time=620.1 ms, rem=5.89 m
+iter= 4440, img_loss=0.292916, reg_loss=0.021521, lr=0.00000, time=613.5 ms, rem=5.73 m
+iter= 4450, img_loss=0.285741, reg_loss=0.022130, lr=0.00000, time=619.0 ms, rem=5.67 m
+iter= 4460, img_loss=0.254384, reg_loss=0.022081, lr=0.00000, time=619.1 ms, rem=5.57 m
+iter= 4470, img_loss=0.323616, reg_loss=0.020706, lr=0.00000, time=606.5 ms, rem=5.36 m
+iter= 4480, img_loss=0.271905, reg_loss=0.021480, lr=0.00000, time=613.3 ms, rem=5.32 m
+iter= 4490, img_loss=0.262011, reg_loss=0.021511, lr=0.00000, time=617.1 ms, rem=5.25 m
+validate_itr =  4500
+iter= 4500, img_loss=0.318125, reg_loss=0.021259, lr=0.00000, time=615.9 ms, rem=5.13 m
+iter= 4510, img_loss=0.296746, reg_loss=0.022020, lr=0.00000, time=616.6 ms, rem=5.04 m
+iter= 4520, img_loss=0.339492, reg_loss=0.018230, lr=0.00000, time=580.8 ms, rem=4.65 m
+iter= 4530, img_loss=0.269402, reg_loss=0.022916, lr=0.00000, time=631.2 ms, rem=4.94 m
+iter= 4540, img_loss=0.270236, reg_loss=0.021818, lr=0.00000, time=615.6 ms, rem=4.72 m
+iter= 4550, img_loss=0.286676, reg_loss=0.021994, lr=0.00000, time=621.0 ms, rem=4.66 m
+iter= 4560, img_loss=0.327942, reg_loss=0.018786, lr=0.00000, time=584.9 ms, rem=4.29 m
+iter= 4570, img_loss=0.262100, reg_loss=0.020996, lr=0.00000, time=608.7 ms, rem=4.36 m
+iter= 4580, img_loss=0.310565, reg_loss=0.019296, lr=0.00000, time=589.0 ms, rem=4.12 m
+iter= 4590, img_loss=0.290557, reg_loss=0.020600, lr=0.00000, time=599.3 ms, rem=4.10 m
+validate_itr =  4600
+iter= 4600, img_loss=0.274793, reg_loss=0.022638, lr=0.00000, time=627.7 ms, rem=4.18 m
+iter= 4610, img_loss=0.311601, reg_loss=0.020652, lr=0.00000, time=600.8 ms, rem=3.91 m
+iter= 4620, img_loss=0.291009, reg_loss=0.019545, lr=0.00000, time=583.3 ms, rem=3.69 m
+iter= 4630, img_loss=0.273017, reg_loss=0.022792, lr=0.00000, time=627.3 ms, rem=3.87 m
+iter= 4640, img_loss=0.315278, reg_loss=0.019973, lr=0.00000, time=602.6 ms, rem=3.62 m
+iter= 4650, img_loss=0.277469, reg_loss=0.022292, lr=0.00000, time=617.4 ms, rem=3.60 m
+iter= 4660, img_loss=0.294363, reg_loss=0.020888, lr=0.00000, time=606.3 ms, rem=3.44 m
+iter= 4670, img_loss=0.320511, reg_loss=0.019482, lr=0.00000, time=591.7 ms, rem=3.25 m
+iter= 4680, img_loss=0.278917, reg_loss=0.022088, lr=0.00000, time=615.8 ms, rem=3.28 m
+iter= 4690, img_loss=0.256365, reg_loss=0.022846, lr=0.00000, time=623.0 ms, rem=3.22 m
+validate_itr =  4700
+iter= 4700, img_loss=0.296982, reg_loss=0.020545, lr=0.00000, time=601.6 ms, rem=3.01 m
+iter= 4710, img_loss=0.281333, reg_loss=0.021200, lr=0.00000, time=607.7 ms, rem=2.94 m
+iter= 4720, img_loss=0.306859, reg_loss=0.021045, lr=0.00000, time=607.6 ms, rem=2.84 m
+iter= 4730, img_loss=0.307714, reg_loss=0.019656, lr=0.00000, time=594.8 ms, rem=2.68 m
+iter= 4740, img_loss=0.301954, reg_loss=0.019511, lr=0.00000, time=591.2 ms, rem=2.56 m
+iter= 4750, img_loss=0.309058, reg_loss=0.017890, lr=0.00000, time=572.3 ms, rem=2.38 m
+iter= 4760, img_loss=0.327171, reg_loss=0.019989, lr=0.00000, time=597.5 ms, rem=2.39 m
+iter= 4770, img_loss=0.292724, reg_loss=0.020235, lr=0.00000, time=595.2 ms, rem=2.28 m
+iter= 4780, img_loss=0.270531, reg_loss=0.022890, lr=0.00000, time=630.3 ms, rem=2.31 m
+iter= 4790, img_loss=0.301372, reg_loss=0.020749, lr=0.00000, time=600.8 ms, rem=2.10 m
+validate_itr =  4800
+iter= 4800, img_loss=0.289316, reg_loss=0.021603, lr=0.00000, time=619.2 ms, rem=2.06 m
+iter= 4810, img_loss=0.305456, reg_loss=0.021893, lr=0.00000, time=620.3 ms, rem=1.96 m
+iter= 4820, img_loss=0.285130, reg_loss=0.021397, lr=0.00000, time=610.0 ms, rem=1.83 m
+iter= 4830, img_loss=0.335776, reg_loss=0.019707, lr=0.00000, time=593.2 ms, rem=1.68 m
+iter= 4840, img_loss=0.326358, reg_loss=0.020081, lr=0.00000, time=598.4 ms, rem=1.60 m
+iter= 4850, img_loss=0.327179, reg_loss=0.019100, lr=0.00000, time=588.8 ms, rem=1.47 m
+iter= 4860, img_loss=0.279899, reg_loss=0.021400, lr=0.00000, time=608.5 ms, rem=1.42 m
+iter= 4870, img_loss=0.314017, reg_loss=0.019181, lr=0.00000, time=588.5 ms, rem=1.28 m
+iter= 4880, img_loss=0.314692, reg_loss=0.020410, lr=0.00000, time=604.1 ms, rem=1.21 m
+iter= 4890, img_loss=0.324442, reg_loss=0.019034, lr=0.00000, time=587.8 ms, rem=1.08 m
+validate_itr =  4900
+iter= 4900, img_loss=0.282081, reg_loss=0.019694, lr=0.00000, time=591.8 ms, rem=59.18 s
+iter= 4910, img_loss=0.281678, reg_loss=0.021909, lr=0.00000, time=616.1 ms, rem=55.45 s
+iter= 4920, img_loss=0.288364, reg_loss=0.021775, lr=0.00000, time=616.1 ms, rem=49.29 s
+iter= 4930, img_loss=0.266979, reg_loss=0.021841, lr=0.00000, time=612.0 ms, rem=42.84 s
+iter= 4940, img_loss=0.297816, reg_loss=0.020445, lr=0.00000, time=602.3 ms, rem=36.14 s
+iter= 4950, img_loss=0.281917, reg_loss=0.021196, lr=0.00000, time=608.7 ms, rem=30.44 s
+iter= 4960, img_loss=0.308864, reg_loss=0.019751, lr=0.00000, time=591.6 ms, rem=23.66 s
+iter= 4970, img_loss=0.307153, reg_loss=0.018526, lr=0.00000, time=575.1 ms, rem=17.25 s
+iter= 4980, img_loss=0.271616, reg_loss=0.022080, lr=0.00000, time=616.7 ms, rem=12.33 s
+iter= 4990, img_loss=0.313433, reg_loss=0.020324, lr=0.00000, time=599.0 ms, rem=5.99 s
+validate_itr =  5000
+iter= 5000, img_loss=0.305419, reg_loss=0.019445, lr=0.00000, time=587.4 ms, rem=0.00 s
+validation: 
+FLAGS.n_samples:  32
+Running validation
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+MSE,      PSNR
+0.67318068, 1.863
+Create initial guess mesh from result
+Cuda path /software/cuda-11.6
+Base mesh has 185244 triangles and 98883 vertices.
+Avg edge length: 0.024698
+Dump mesh for debugging
+Writing mesh:  out/nerf_hotdog10/dmtet_mesh/mesh.obj
+    writing 98883 vertices
+    writing 193918 texcoords
+    writing 98883 normals
+    writing 185244 faces
+Writing material:  out/nerf_hotdog10/dmtet_mesh/mesh.mtl
+Done exporting mesh
+Pass 2: Train with fixed topology (mesh)
+optimize_mesh
+Start enumerate(dataloader_train)
+validate_itr =  0
+iter=    0, img_loss=0.242617, reg_loss=0.025498, lr=0.00000, time=392.5 ms, rem=32.71 m
+iter=   10, img_loss=0.322522, reg_loss=0.018802, lr=0.00000, time=359.6 ms, rem=29.91 m
+iter=   20, img_loss=0.298554, reg_loss=0.020501, lr=0.00000, time=364.6 ms, rem=30.27 m
+iter=   30, img_loss=0.309103, reg_loss=0.018484, lr=0.00000, time=349.5 ms, rem=28.95 m
+iter=   40, img_loss=0.265762, reg_loss=0.021761, lr=0.00000, time=362.2 ms, rem=29.94 m
+iter=   50, img_loss=0.290944, reg_loss=0.021756, lr=0.00000, time=357.0 ms, rem=29.45 m
+iter=   60, img_loss=0.289986, reg_loss=0.024337, lr=0.00000, time=366.8 ms, rem=30.20 m
+iter=   70, img_loss=0.333796, reg_loss=0.025547, lr=0.00000, time=360.3 ms, rem=29.61 m
+iter=   80, img_loss=0.340770, reg_loss=0.030060, lr=0.00000, time=377.2 ms, rem=30.93 m
+iter=   90, img_loss=0.320468, reg_loss=0.027237, lr=0.00000, time=338.5 ms, rem=27.70 m
+validate_itr =  100
+iter=  100, img_loss=0.291834, reg_loss=0.038935, lr=0.00000, time=396.8 ms, rem=32.41 m
+iter=  110, img_loss=0.286013, reg_loss=0.031750, lr=0.00000, time=331.0 ms, rem=26.97 m
+iter=  120, img_loss=0.308407, reg_loss=0.038170, lr=0.00000, time=373.9 ms, rem=30.41 m
+iter=  130, img_loss=0.317030, reg_loss=0.035463, lr=0.00000, time=344.1 ms, rem=27.93 m
+iter=  140, img_loss=0.292400, reg_loss=0.039553, lr=0.00000, time=362.5 ms, rem=29.36 m
+iter=  150, img_loss=0.310628, reg_loss=0.039361, lr=0.00000, time=356.3 ms, rem=28.80 m
+iter=  160, img_loss=0.296426, reg_loss=0.038811, lr=0.00000, time=358.9 ms, rem=28.95 m
+iter=  170, img_loss=0.313281, reg_loss=0.042565, lr=0.00000, time=379.6 ms, rem=30.56 m
+iter=  180, img_loss=0.321380, reg_loss=0.041389, lr=0.00000, time=354.0 ms, rem=28.44 m
+iter=  190, img_loss=0.358401, reg_loss=0.035807, lr=0.00000, time=323.8 ms, rem=25.96 m
+validate_itr =  200
+iter=  200, img_loss=0.320105, reg_loss=0.037239, lr=0.00000, time=342.7 ms, rem=27.41 m
+iter=  210, img_loss=0.279702, reg_loss=0.045408, lr=0.00000, time=401.4 ms, rem=32.05 m
+iter=  220, img_loss=0.275452, reg_loss=0.044127, lr=0.00000, time=371.2 ms, rem=29.58 m
+iter=  230, img_loss=0.306095, reg_loss=0.040223, lr=0.00000, time=351.9 ms, rem=27.97 m
+iter=  240, img_loss=0.287461, reg_loss=0.043785, lr=0.00000, time=379.3 ms, rem=30.09 m
+iter=  250, img_loss=0.286343, reg_loss=0.047865, lr=0.00000, time=395.4 ms, rem=31.30 m
+iter=  260, img_loss=0.315490, reg_loss=0.047919, lr=0.00000, time=384.5 ms, rem=30.37 m
+iter=  270, img_loss=0.296073, reg_loss=0.042091, lr=0.00000, time=351.0 ms, rem=27.67 m
+iter=  280, img_loss=0.311289, reg_loss=0.039762, lr=0.00000, time=352.0 ms, rem=27.69 m
+iter=  290, img_loss=0.301206, reg_loss=0.036373, lr=0.00000, time=332.2 ms, rem=26.08 m
+validate_itr =  300
+iter=  300, img_loss=0.331338, reg_loss=0.042020, lr=0.00000, time=367.4 ms, rem=28.78 m
+iter=  310, img_loss=0.330568, reg_loss=0.040187, lr=0.00000, time=345.3 ms, rem=26.99 m
+iter=  320, img_loss=0.337505, reg_loss=0.041974, lr=0.00000, time=358.1 ms, rem=27.93 m
+iter=  330, img_loss=0.297897, reg_loss=0.045858, lr=0.00000, time=385.3 ms, rem=29.99 m
+iter=  340, img_loss=0.280825, reg_loss=0.051690, lr=0.00000, time=410.5 ms, rem=31.89 m
+iter=  350, img_loss=0.275555, reg_loss=0.044746, lr=0.00000, time=356.2 ms, rem=27.60 m
+iter=  360, img_loss=0.289355, reg_loss=0.050362, lr=0.00000, time=396.1 ms, rem=30.63 m
+iter=  370, img_loss=0.273021, reg_loss=0.049756, lr=0.00000, time=385.2 ms, rem=29.72 m
+iter=  380, img_loss=0.300718, reg_loss=0.042843, lr=0.00000, time=343.0 ms, rem=26.41 m
+iter=  390, img_loss=0.282199, reg_loss=0.045517, lr=0.00000, time=380.4 ms, rem=29.22 m
+validate_itr =  400
+iter=  400, img_loss=0.291398, reg_loss=0.039465, lr=0.00000, time=335.5 ms, rem=25.72 m
+iter=  410, img_loss=0.267599, reg_loss=0.044304, lr=0.00000, time=377.0 ms, rem=28.84 m
+iter=  420, img_loss=0.263861, reg_loss=0.043746, lr=0.00000, time=365.5 ms, rem=27.90 m
+iter=  430, img_loss=0.264468, reg_loss=0.050564, lr=0.00000, time=407.3 ms, rem=31.02 m
+iter=  440, img_loss=0.259680, reg_loss=0.051601, lr=0.00000, time=403.8 ms, rem=30.69 m
+iter=  450, img_loss=0.279662, reg_loss=0.043898, lr=0.00000, time=358.3 ms, rem=27.17 m
+iter=  460, img_loss=0.299226, reg_loss=0.040591, lr=0.00000, time=349.2 ms, rem=26.42 m
+iter=  470, img_loss=0.257250, reg_loss=0.052749, lr=0.00000, time=419.2 ms, rem=31.65 m
+iter=  480, img_loss=0.254429, reg_loss=0.057354, lr=0.00000, time=423.7 ms, rem=31.92 m
+iter=  490, img_loss=0.290343, reg_loss=0.047360, lr=0.00000, time=361.9 ms, rem=27.20 m
+validate_itr =  500
+iter=  500, img_loss=0.263903, reg_loss=0.050301, lr=0.00000, time=391.2 ms, rem=29.34 m
+iter=  510, img_loss=0.270038, reg_loss=0.049109, lr=0.00000, time=388.8 ms, rem=29.09 m
+iter=  520, img_loss=0.265603, reg_loss=0.047254, lr=0.00000, time=377.9 ms, rem=28.22 m
+iter=  530, img_loss=0.273792, reg_loss=0.042738, lr=0.00000, time=357.1 ms, rem=26.60 m
+iter=  540, img_loss=0.260207, reg_loss=0.043469, lr=0.00000, time=365.8 ms, rem=27.19 m
+iter=  550, img_loss=0.299275, reg_loss=0.043819, lr=0.00000, time=369.9 ms, rem=27.44 m
+iter=  560, img_loss=0.281379, reg_loss=0.040849, lr=0.00000, time=354.9 ms, rem=26.26 m
+iter=  570, img_loss=0.285847, reg_loss=0.034280, lr=0.00000, time=327.0 ms, rem=24.14 m
+iter=  580, img_loss=0.272892, reg_loss=0.035320, lr=0.00000, time=347.5 ms, rem=25.60 m
+iter=  590, img_loss=0.279151, reg_loss=0.035571, lr=0.00000, time=355.1 ms, rem=26.10 m
+validate_itr =  600
+iter=  600, img_loss=0.256957, reg_loss=0.044496, lr=0.00000, time=407.6 ms, rem=29.89 m
+iter=  610, img_loss=0.273832, reg_loss=0.046619, lr=0.00000, time=403.7 ms, rem=29.54 m
+iter=  620, img_loss=0.254557, reg_loss=0.048679, lr=0.00000, time=406.1 ms, rem=29.64 m
+iter=  630, img_loss=0.271375, reg_loss=0.046784, lr=0.00000, time=385.7 ms, rem=28.09 m
+iter=  640, img_loss=0.241193, reg_loss=0.050188, lr=0.00000, time=411.0 ms, rem=29.86 m
+iter=  650, img_loss=0.283491, reg_loss=0.042716, lr=0.00000, time=362.8 ms, rem=26.30 m
+iter=  660, img_loss=0.253175, reg_loss=0.043714, lr=0.00000, time=384.1 ms, rem=27.78 m
+iter=  670, img_loss=0.235923, reg_loss=0.048023, lr=0.00000, time=411.2 ms, rem=29.68 m
+iter=  680, img_loss=0.257282, reg_loss=0.041044, lr=0.00000, time=366.7 ms, rem=26.40 m
+iter=  690, img_loss=0.279819, reg_loss=0.038668, lr=0.00000, time=355.5 ms, rem=25.53 m
+validate_itr =  700
+iter=  700, img_loss=0.276445, reg_loss=0.034928, lr=0.00000, time=338.5 ms, rem=24.26 m
+iter=  710, img_loss=0.290440, reg_loss=0.037749, lr=0.00000, time=361.8 ms, rem=25.87 m
+iter=  720, img_loss=0.271901, reg_loss=0.038958, lr=0.00000, time=372.0 ms, rem=26.53 m
+iter=  730, img_loss=0.280343, reg_loss=0.043873, lr=0.00000, time=395.4 ms, rem=28.14 m
+iter=  740, img_loss=0.270629, reg_loss=0.044402, lr=0.00000, time=378.8 ms, rem=26.90 m
+iter=  750, img_loss=0.273109, reg_loss=0.040509, lr=0.00000, time=351.6 ms, rem=24.90 m
+iter=  760, img_loss=0.249704, reg_loss=0.038094, lr=0.00000, time=355.6 ms, rem=25.13 m
+iter=  770, img_loss=0.316225, reg_loss=0.033597, lr=0.00000, time=334.5 ms, rem=23.59 m
+iter=  780, img_loss=0.246424, reg_loss=0.039874, lr=0.00000, time=373.1 ms, rem=26.24 m
+iter=  790, img_loss=0.267415, reg_loss=0.042368, lr=0.00000, time=386.9 ms, rem=27.15 m
+validate_itr =  800
+iter=  800, img_loss=0.259421, reg_loss=0.040447, lr=0.00000, time=365.1 ms, rem=25.56 m
+iter=  810, img_loss=0.262882, reg_loss=0.031530, lr=0.00000, time=319.0 ms, rem=22.28 m
+iter=  820, img_loss=0.301229, reg_loss=0.033357, lr=0.00000, time=347.2 ms, rem=24.19 m
+iter=  830, img_loss=0.261600, reg_loss=0.045540, lr=0.00000, time=420.3 ms, rem=29.21 m
+iter=  840, img_loss=0.288556, reg_loss=0.037354, lr=0.00000, time=343.9 ms, rem=23.84 m
+iter=  850, img_loss=0.250240, reg_loss=0.039404, lr=0.00000, time=368.2 ms, rem=25.47 m
+iter=  860, img_loss=0.251064, reg_loss=0.042457, lr=0.00000, time=389.3 ms, rem=26.86 m
+iter=  870, img_loss=0.258336, reg_loss=0.043139, lr=0.00000, time=388.2 ms, rem=26.72 m
+iter=  880, img_loss=0.260176, reg_loss=0.040179, lr=0.00000, time=370.1 ms, rem=25.41 m
+iter=  890, img_loss=0.272577, reg_loss=0.038971, lr=0.00000, time=365.2 ms, rem=25.01 m
+validate_itr =  900
+iter=  900, img_loss=0.232267, reg_loss=0.038111, lr=0.00000, time=362.1 ms, rem=24.74 m
+iter=  910, img_loss=0.250401, reg_loss=0.039891, lr=0.00000, time=377.9 ms, rem=25.76 m
+iter=  920, img_loss=0.252700, reg_loss=0.041470, lr=0.00000, time=386.8 ms, rem=26.30 m
+iter=  930, img_loss=0.262245, reg_loss=0.045173, lr=0.00000, time=407.2 ms, rem=27.62 m
+iter=  940, img_loss=0.256466, reg_loss=0.040974, lr=0.00000, time=377.8 ms, rem=25.56 m
+iter=  950, img_loss=0.236246, reg_loss=0.041954, lr=0.00000, time=388.2 ms, rem=26.20 m
+iter=  960, img_loss=0.233784, reg_loss=0.042581, lr=0.00000, time=389.2 ms, rem=26.21 m
+iter=  970, img_loss=0.269600, reg_loss=0.036407, lr=0.00000, time=349.8 ms, rem=23.50 m
+iter=  980, img_loss=0.262661, reg_loss=0.034805, lr=0.00000, time=346.6 ms, rem=23.22 m
+iter=  990, img_loss=0.261124, reg_loss=0.036236, lr=0.00000, time=356.9 ms, rem=23.85 m
+validate_itr =  1000
+iter= 1000, img_loss=0.226488, reg_loss=0.042183, lr=0.00000, time=397.0 ms, rem=26.47 m
+iter= 1010, img_loss=0.257789, reg_loss=0.038402, lr=0.00000, time=369.1 ms, rem=24.54 m
+iter= 1020, img_loss=0.245167, reg_loss=0.040882, lr=0.00000, time=383.3 ms, rem=25.42 m
+iter= 1030, img_loss=0.252133, reg_loss=0.041941, lr=0.00000, time=394.6 ms, rem=26.11 m
+iter= 1040, img_loss=0.245973, reg_loss=0.038186, lr=0.00000, time=367.1 ms, rem=24.23 m
+iter= 1050, img_loss=0.281242, reg_loss=0.034113, lr=0.00000, time=349.3 ms, rem=22.99 m
+iter= 1060, img_loss=0.261278, reg_loss=0.035172, lr=0.00000, time=360.1 ms, rem=23.64 m
+iter= 1070, img_loss=0.251664, reg_loss=0.040512, lr=0.00000, time=394.8 ms, rem=25.86 m
+iter= 1080, img_loss=0.296659, reg_loss=0.031446, lr=0.00000, time=336.0 ms, rem=21.95 m
+iter= 1090, img_loss=0.260981, reg_loss=0.037230, lr=0.00000, time=485.8 ms, rem=31.66 m
+validate_itr =  1100
+iter= 1100, img_loss=0.247246, reg_loss=0.039452, lr=0.00000, time=385.7 ms, rem=25.07 m
+iter= 1110, img_loss=0.289370, reg_loss=0.035680, lr=0.00000, time=363.5 ms, rem=23.57 m
+iter= 1120, img_loss=0.249223, reg_loss=0.038408, lr=0.00000, time=374.8 ms, rem=24.24 m
+iter= 1130, img_loss=0.246866, reg_loss=0.040053, lr=0.00000, time=385.0 ms, rem=24.83 m
+iter= 1140, img_loss=0.216921, reg_loss=0.044920, lr=0.00000, time=410.5 ms, rem=26.41 m
+iter= 1150, img_loss=0.275971, reg_loss=0.040116, lr=0.00000, time=379.0 ms, rem=24.32 m
+iter= 1160, img_loss=0.258461, reg_loss=0.039960, lr=0.00000, time=384.8 ms, rem=24.63 m
+iter= 1170, img_loss=0.223017, reg_loss=0.039289, lr=0.00000, time=387.4 ms, rem=24.73 m
+iter= 1180, img_loss=0.235197, reg_loss=0.043457, lr=0.00000, time=413.0 ms, rem=26.29 m
+iter= 1190, img_loss=0.290538, reg_loss=0.036423, lr=0.00000, time=362.6 ms, rem=23.02 m
+validate_itr =  1200
+iter= 1200, img_loss=0.235903, reg_loss=0.038575, lr=0.00000, time=385.1 ms, rem=24.39 m
+iter= 1210, img_loss=0.234073, reg_loss=0.038216, lr=0.00000, time=385.3 ms, rem=24.34 m
+iter= 1220, img_loss=0.255053, reg_loss=0.036389, lr=0.00000, time=365.3 ms, rem=23.02 m
+iter= 1230, img_loss=0.271795, reg_loss=0.033752, lr=0.00000, time=353.5 ms, rem=22.21 m
+iter= 1240, img_loss=0.263594, reg_loss=0.034273, lr=0.00000, time=366.4 ms, rem=22.96 m
+iter= 1250, img_loss=0.249253, reg_loss=0.039279, lr=0.00000, time=396.8 ms, rem=24.80 m
+iter= 1260, img_loss=0.251982, reg_loss=0.039925, lr=0.00000, time=398.7 ms, rem=24.85 m
+iter= 1270, img_loss=0.271729, reg_loss=0.038486, lr=0.00000, time=385.1 ms, rem=23.94 m
+iter= 1280, img_loss=0.259139, reg_loss=0.038467, lr=0.00000, time=385.1 ms, rem=23.88 m
+iter= 1290, img_loss=0.253177, reg_loss=0.037528, lr=0.00000, time=370.0 ms, rem=22.88 m
+validate_itr =  1300
+iter= 1300, img_loss=0.257724, reg_loss=0.036616, lr=0.00000, time=370.0 ms, rem=22.82 m
+iter= 1310, img_loss=0.272046, reg_loss=0.036336, lr=0.00000, time=375.8 ms, rem=23.11 m
+iter= 1320, img_loss=0.262073, reg_loss=0.037000, lr=0.00000, time=384.7 ms, rem=23.59 m
+iter= 1330, img_loss=0.260203, reg_loss=0.034118, lr=0.00000, time=362.5 ms, rem=22.17 m
+iter= 1340, img_loss=0.242770, reg_loss=0.035901, lr=0.00000, time=378.8 ms, rem=23.11 m
+iter= 1350, img_loss=0.278813, reg_loss=0.031673, lr=0.00000, time=347.5 ms, rem=21.14 m
+iter= 1360, img_loss=0.247212, reg_loss=0.037514, lr=0.00000, time=387.2 ms, rem=23.49 m
+iter= 1370, img_loss=0.229244, reg_loss=0.036387, lr=0.00000, time=375.5 ms, rem=22.72 m
+iter= 1380, img_loss=0.237829, reg_loss=0.035945, lr=0.00000, time=378.6 ms, rem=22.84 m
+iter= 1390, img_loss=0.223803, reg_loss=0.040000, lr=0.00000, time=406.4 ms, rem=24.45 m
+validate_itr =  1400
+iter= 1400, img_loss=0.255947, reg_loss=0.035640, lr=0.00000, time=374.8 ms, rem=22.49 m
+iter= 1410, img_loss=0.268372, reg_loss=0.034144, lr=0.00000, time=369.5 ms, rem=22.11 m
+iter= 1420, img_loss=0.245006, reg_loss=0.035439, lr=0.00000, time=377.4 ms, rem=22.52 m
+iter= 1430, img_loss=0.232927, reg_loss=0.037425, lr=0.00000, time=386.7 ms, rem=23.01 m
+iter= 1440, img_loss=0.251868, reg_loss=0.035011, lr=0.00000, time=367.5 ms, rem=21.80 m
+iter= 1450, img_loss=0.234883, reg_loss=0.039258, lr=0.00000, time=399.7 ms, rem=23.65 m
+iter= 1460, img_loss=0.243479, reg_loss=0.036451, lr=0.00000, time=388.7 ms, rem=22.93 m
+iter= 1470, img_loss=0.215550, reg_loss=0.039198, lr=0.00000, time=394.9 ms, rem=23.23 m
+iter= 1480, img_loss=0.248567, reg_loss=0.036872, lr=0.00000, time=378.4 ms, rem=22.20 m
+iter= 1490, img_loss=0.258146, reg_loss=0.037528, lr=0.00000, time=384.5 ms, rem=22.49 m
+validate_itr =  1500
+iter= 1500, img_loss=0.238132, reg_loss=0.037016, lr=0.00000, time=381.6 ms, rem=22.26 m
+iter= 1510, img_loss=0.225540, reg_loss=0.033940, lr=0.00000, time=359.8 ms, rem=20.93 m
+iter= 1520, img_loss=0.241672, reg_loss=0.035970, lr=0.00000, time=382.7 ms, rem=22.19 m
+iter= 1530, img_loss=0.252783, reg_loss=0.038369, lr=0.00000, time=401.9 ms, rem=23.24 m
+iter= 1540, img_loss=0.256965, reg_loss=0.033554, lr=0.00000, time=370.2 ms, rem=21.35 m
+iter= 1550, img_loss=0.226951, reg_loss=0.036895, lr=0.00000, time=387.7 ms, rem=22.29 m
+iter= 1560, img_loss=0.237456, reg_loss=0.038470, lr=0.00000, time=396.1 ms, rem=22.71 m
+iter= 1570, img_loss=0.249796, reg_loss=0.035989, lr=0.00000, time=376.2 ms, rem=21.50 m
+iter= 1580, img_loss=0.248207, reg_loss=0.037645, lr=0.00000, time=389.6 ms, rem=22.21 m
+iter= 1590, img_loss=0.244490, reg_loss=0.035843, lr=0.00000, time=380.0 ms, rem=21.60 m
+validate_itr =  1600
+iter= 1600, img_loss=0.251946, reg_loss=0.032243, lr=0.00000, time=358.5 ms, rem=20.31 m
+iter= 1610, img_loss=0.251215, reg_loss=0.036253, lr=0.00000, time=382.5 ms, rem=21.61 m
+iter= 1620, img_loss=0.231418, reg_loss=0.035676, lr=0.00000, time=382.4 ms, rem=21.54 m
+iter= 1630, img_loss=0.278037, reg_loss=0.030082, lr=0.00000, time=348.3 ms, rem=19.56 m
+iter= 1640, img_loss=0.234359, reg_loss=0.032295, lr=0.00000, time=363.7 ms, rem=20.37 m
+iter= 1650, img_loss=0.228802, reg_loss=0.036951, lr=0.00000, time=393.7 ms, rem=21.98 m
+iter= 1660, img_loss=0.281740, reg_loss=0.030792, lr=0.00000, time=356.0 ms, rem=19.82 m
+iter= 1670, img_loss=0.229290, reg_loss=0.039648, lr=0.00000, time=411.4 ms, rem=22.83 m
+iter= 1680, img_loss=0.269856, reg_loss=0.035686, lr=0.00000, time=380.9 ms, rem=21.07 m
+iter= 1690, img_loss=0.265163, reg_loss=0.038408, lr=0.00000, time=395.6 ms, rem=21.83 m
+validate_itr =  1700
+iter= 1700, img_loss=0.279617, reg_loss=0.027518, lr=0.00000, time=326.8 ms, rem=17.98 m
+iter= 1710, img_loss=0.242825, reg_loss=0.036350, lr=0.00000, time=390.8 ms, rem=21.43 m
+iter= 1720, img_loss=0.246268, reg_loss=0.032044, lr=0.00000, time=363.9 ms, rem=19.89 m
+iter= 1730, img_loss=0.263160, reg_loss=0.030586, lr=0.00000, time=351.9 ms, rem=19.18 m
+iter= 1740, img_loss=0.237130, reg_loss=0.036624, lr=0.00000, time=394.9 ms, rem=21.46 m
+iter= 1750, img_loss=0.249464, reg_loss=0.035077, lr=0.00000, time=378.6 ms, rem=20.51 m
+iter= 1760, img_loss=0.243772, reg_loss=0.030426, lr=0.00000, time=352.2 ms, rem=19.02 m
+iter= 1770, img_loss=0.256984, reg_loss=0.031477, lr=0.00000, time=361.5 ms, rem=19.46 m
+iter= 1780, img_loss=0.231685, reg_loss=0.038779, lr=0.00000, time=406.7 ms, rem=21.83 m
+iter= 1790, img_loss=0.245462, reg_loss=0.033565, lr=0.00000, time=368.5 ms, rem=19.72 m
+validate_itr =  1800
+iter= 1800, img_loss=0.241199, reg_loss=0.032769, lr=0.00000, time=362.2 ms, rem=19.31 m
+iter= 1810, img_loss=0.256328, reg_loss=0.031120, lr=0.00000, time=364.1 ms, rem=19.36 m
+iter= 1820, img_loss=0.245077, reg_loss=0.033334, lr=0.00000, time=378.3 ms, rem=20.05 m
+iter= 1830, img_loss=0.241479, reg_loss=0.030627, lr=0.00000, time=358.5 ms, rem=18.94 m
+iter= 1840, img_loss=0.260575, reg_loss=0.029519, lr=0.00000, time=353.9 ms, rem=18.64 m
+iter= 1850, img_loss=0.219632, reg_loss=0.033265, lr=0.00000, time=373.1 ms, rem=19.59 m
+iter= 1860, img_loss=0.246992, reg_loss=0.030399, lr=0.00000, time=357.9 ms, rem=18.73 m
+iter= 1870, img_loss=0.256023, reg_loss=0.029192, lr=0.00000, time=351.9 ms, rem=18.36 m
+iter= 1880, img_loss=0.242985, reg_loss=0.032872, lr=0.00000, time=383.0 ms, rem=19.91 m
+iter= 1890, img_loss=0.225961, reg_loss=0.032400, lr=0.00000, time=374.0 ms, rem=19.39 m
+validate_itr =  1900
+iter= 1900, img_loss=0.207878, reg_loss=0.033041, lr=0.00000, time=372.4 ms, rem=19.24 m
+iter= 1910, img_loss=0.246624, reg_loss=0.030777, lr=0.00000, time=360.7 ms, rem=18.58 m
+iter= 1920, img_loss=0.265622, reg_loss=0.026097, lr=0.00000, time=334.5 ms, rem=17.17 m
+iter= 1930, img_loss=0.253985, reg_loss=0.028322, lr=0.00000, time=347.9 ms, rem=17.80 m
+iter= 1940, img_loss=0.268515, reg_loss=0.030828, lr=0.00000, time=367.3 ms, rem=18.73 m
+iter= 1950, img_loss=0.241826, reg_loss=0.031327, lr=0.00000, time=371.3 ms, rem=18.88 m
+iter= 1960, img_loss=0.245630, reg_loss=0.029164, lr=0.00000, time=354.3 ms, rem=17.95 m
+iter= 1970, img_loss=0.228997, reg_loss=0.032535, lr=0.00000, time=373.4 ms, rem=18.86 m
+iter= 1980, img_loss=0.263043, reg_loss=0.030994, lr=0.00000, time=364.3 ms, rem=18.33 m
+iter= 1990, img_loss=0.248982, reg_loss=0.034116, lr=0.00000, time=387.2 ms, rem=19.42 m
+validate_itr =  2000
+iter= 2000, img_loss=0.213964, reg_loss=0.034578, lr=0.00000, time=384.8 ms, rem=19.24 m
+iter= 2010, img_loss=0.255678, reg_loss=0.029290, lr=0.00000, time=356.0 ms, rem=17.74 m
+iter= 2020, img_loss=0.259478, reg_loss=0.028874, lr=0.00000, time=353.9 ms, rem=17.58 m
+iter= 2030, img_loss=0.235776, reg_loss=0.033804, lr=0.00000, time=388.2 ms, rem=19.22 m
+iter= 2040, img_loss=0.270041, reg_loss=0.029603, lr=0.00000, time=360.2 ms, rem=17.77 m
+iter= 2050, img_loss=0.225955, reg_loss=0.034363, lr=0.00000, time=390.0 ms, rem=19.18 m
+iter= 2060, img_loss=0.247404, reg_loss=0.031717, lr=0.00000, time=371.7 ms, rem=18.21 m
+iter= 2070, img_loss=0.251944, reg_loss=0.028608, lr=0.00000, time=349.8 ms, rem=17.08 m
+iter= 2080, img_loss=0.246931, reg_loss=0.029209, lr=0.00000, time=360.3 ms, rem=17.53 m
+iter= 2090, img_loss=0.233680, reg_loss=0.033558, lr=0.00000, time=387.1 ms, rem=18.78 m
+validate_itr =  2100
+iter= 2100, img_loss=0.230143, reg_loss=0.032206, lr=0.00000, time=374.5 ms, rem=18.10 m
+iter= 2110, img_loss=0.244954, reg_loss=0.032595, lr=0.00000, time=375.9 ms, rem=18.11 m
+iter= 2120, img_loss=0.261217, reg_loss=0.031034, lr=0.00000, time=369.8 ms, rem=17.75 m
+iter= 2130, img_loss=0.209634, reg_loss=0.033518, lr=0.00000, time=382.4 ms, rem=18.29 m
+iter= 2140, img_loss=0.271286, reg_loss=0.032213, lr=0.00000, time=379.0 ms, rem=18.06 m
+iter= 2150, img_loss=0.220809, reg_loss=0.031789, lr=0.00000, time=372.0 ms, rem=17.67 m
+iter= 2160, img_loss=0.234432, reg_loss=0.034581, lr=0.00000, time=392.7 ms, rem=18.59 m
+iter= 2170, img_loss=0.232075, reg_loss=0.033062, lr=0.00000, time=385.7 ms, rem=18.19 m
+iter= 2180, img_loss=0.278419, reg_loss=0.024653, lr=0.00000, time=329.2 ms, rem=15.47 m
+iter= 2190, img_loss=0.243975, reg_loss=0.034627, lr=0.00000, time=397.7 ms, rem=18.63 m
+validate_itr =  2200
+iter= 2200, img_loss=0.238970, reg_loss=0.031353, lr=0.00000, time=377.8 ms, rem=17.63 m
+iter= 2210, img_loss=0.266014, reg_loss=0.026439, lr=0.00000, time=340.0 ms, rem=15.81 m
+iter= 2220, img_loss=0.222531, reg_loss=0.036485, lr=0.00000, time=408.2 ms, rem=18.92 m
+iter= 2230, img_loss=0.237424, reg_loss=0.030139, lr=0.00000, time=364.9 ms, rem=16.85 m
+iter= 2240, img_loss=0.268372, reg_loss=0.030897, lr=0.00000, time=376.8 ms, rem=17.33 m
+iter= 2250, img_loss=0.238379, reg_loss=0.033151, lr=0.00000, time=388.7 ms, rem=17.81 m
+iter= 2260, img_loss=0.277399, reg_loss=0.026646, lr=0.00000, time=346.0 ms, rem=15.80 m
+iter= 2270, img_loss=0.269644, reg_loss=0.027811, lr=0.00000, time=355.7 ms, rem=16.18 m
+iter= 2280, img_loss=0.221324, reg_loss=0.034135, lr=0.00000, time=393.8 ms, rem=17.85 m
+iter= 2290, img_loss=0.254497, reg_loss=0.025618, lr=0.00000, time=340.3 ms, rem=15.37 m
+validate_itr =  2300
+iter= 2300, img_loss=0.244996, reg_loss=0.024539, lr=0.00000, time=333.5 ms, rem=15.01 m
+iter= 2310, img_loss=0.233232, reg_loss=0.030474, lr=0.00000, time=372.4 ms, rem=16.70 m
+iter= 2320, img_loss=0.251829, reg_loss=0.031894, lr=0.00000, time=381.7 ms, rem=17.05 m
+iter= 2330, img_loss=0.221389, reg_loss=0.031645, lr=0.00000, time=380.5 ms, rem=16.93 m
+iter= 2340, img_loss=0.225212, reg_loss=0.035005, lr=0.00000, time=402.3 ms, rem=17.84 m
+iter= 2350, img_loss=0.202747, reg_loss=0.031881, lr=0.00000, time=377.9 ms, rem=16.69 m
+iter= 2360, img_loss=0.260531, reg_loss=0.029610, lr=0.00000, time=367.1 ms, rem=16.15 m
+iter= 2370, img_loss=0.252852, reg_loss=0.029001, lr=0.00000, time=361.2 ms, rem=15.83 m
+iter= 2380, img_loss=0.228915, reg_loss=0.029639, lr=0.00000, time=366.8 ms, rem=16.02 m
+iter= 2390, img_loss=0.258759, reg_loss=0.030562, lr=0.00000, time=375.0 ms, rem=16.31 m
+validate_itr =  2400
+iter= 2400, img_loss=0.264546, reg_loss=0.025817, lr=0.00000, time=343.7 ms, rem=14.89 m
+iter= 2410, img_loss=0.263676, reg_loss=0.024331, lr=0.00000, time=336.2 ms, rem=14.51 m
+iter= 2420, img_loss=0.255414, reg_loss=0.025812, lr=0.00000, time=345.6 ms, rem=14.86 m
+iter= 2430, img_loss=0.280007, reg_loss=0.021221, lr=0.00000, time=317.8 ms, rem=13.61 m
+iter= 2440, img_loss=0.264521, reg_loss=0.027007, lr=0.00000, time=358.4 ms, rem=15.29 m
+iter= 2450, img_loss=0.235601, reg_loss=0.026230, lr=0.00000, time=348.4 ms, rem=14.81 m
+iter= 2460, img_loss=0.230110, reg_loss=0.032675, lr=0.00000, time=393.5 ms, rem=16.66 m
+iter= 2470, img_loss=0.259499, reg_loss=0.028100, lr=0.00000, time=364.2 ms, rem=15.36 m
+iter= 2480, img_loss=0.240050, reg_loss=0.028530, lr=0.00000, time=363.0 ms, rem=15.25 m
+iter= 2490, img_loss=0.269669, reg_loss=0.027516, lr=0.00000, time=358.9 ms, rem=15.02 m
+validate_itr =  2500
+iter= 2500, img_loss=0.236475, reg_loss=0.027867, lr=0.00000, time=355.1 ms, rem=14.80 m
+iter= 2510, img_loss=0.241959, reg_loss=0.032875, lr=0.00000, time=393.2 ms, rem=16.32 m
+iter= 2520, img_loss=0.265129, reg_loss=0.028066, lr=0.00000, time=362.9 ms, rem=15.00 m
+iter= 2530, img_loss=0.244777, reg_loss=0.026038, lr=0.00000, time=346.1 ms, rem=14.25 m
+iter= 2540, img_loss=0.215278, reg_loss=0.034782, lr=0.00000, time=405.8 ms, rem=16.64 m
+iter= 2550, img_loss=0.258722, reg_loss=0.025943, lr=0.00000, time=343.2 ms, rem=14.01 m
+iter= 2560, img_loss=0.234432, reg_loss=0.029046, lr=0.00000, time=366.1 ms, rem=14.89 m
+iter= 2570, img_loss=0.265963, reg_loss=0.022674, lr=0.00000, time=326.1 ms, rem=13.21 m
+iter= 2580, img_loss=0.258696, reg_loss=0.025747, lr=0.00000, time=349.5 ms, rem=14.10 m
+iter= 2590, img_loss=0.219748, reg_loss=0.031423, lr=0.00000, time=386.3 ms, rem=15.52 m
+validate_itr =  2600
+iter= 2600, img_loss=0.217387, reg_loss=0.031284, lr=0.00000, time=381.8 ms, rem=15.27 m
+iter= 2610, img_loss=0.234949, reg_loss=0.029146, lr=0.00000, time=368.4 ms, rem=14.67 m
+iter= 2620, img_loss=0.264231, reg_loss=0.027424, lr=0.00000, time=356.8 ms, rem=14.15 m
+iter= 2630, img_loss=0.252314, reg_loss=0.027432, lr=0.00000, time=359.8 ms, rem=14.21 m
+iter= 2640, img_loss=0.243805, reg_loss=0.026939, lr=0.00000, time=358.5 ms, rem=14.10 m
+iter= 2650, img_loss=0.279187, reg_loss=0.024752, lr=0.00000, time=345.9 ms, rem=13.55 m
+iter= 2660, img_loss=0.224333, reg_loss=0.031531, lr=0.00000, time=388.7 ms, rem=15.16 m
+iter= 2670, img_loss=0.246700, reg_loss=0.030364, lr=0.00000, time=380.7 ms, rem=14.78 m
+iter= 2680, img_loss=0.223576, reg_loss=0.030610, lr=0.00000, time=378.2 ms, rem=14.63 m
+iter= 2690, img_loss=0.239802, reg_loss=0.026611, lr=0.00000, time=354.9 ms, rem=13.66 m
+validate_itr =  2700
+iter= 2700, img_loss=0.237621, reg_loss=0.028437, lr=0.00000, time=366.6 ms, rem=14.05 m
+iter= 2710, img_loss=0.274201, reg_loss=0.023305, lr=0.00000, time=333.8 ms, rem=12.74 m
+iter= 2720, img_loss=0.208889, reg_loss=0.032080, lr=0.00000, time=393.8 ms, rem=14.97 m
+iter= 2730, img_loss=0.225643, reg_loss=0.030610, lr=0.00000, time=380.4 ms, rem=14.39 m
+iter= 2740, img_loss=0.215497, reg_loss=0.035220, lr=0.00000, time=413.6 ms, rem=15.58 m
+iter= 2750, img_loss=0.245488, reg_loss=0.028999, lr=0.00000, time=371.6 ms, rem=13.94 m
+iter= 2760, img_loss=0.255263, reg_loss=0.024276, lr=0.00000, time=341.8 ms, rem=12.76 m
+iter= 2770, img_loss=0.254538, reg_loss=0.023229, lr=0.00000, time=338.8 ms, rem=12.59 m
+iter= 2780, img_loss=0.243860, reg_loss=0.024004, lr=0.00000, time=345.4 ms, rem=12.78 m
+iter= 2790, img_loss=0.248543, reg_loss=0.026611, lr=0.00000, time=364.7 ms, rem=13.43 m
+validate_itr =  2800
+iter= 2800, img_loss=0.253410, reg_loss=0.024505, lr=0.00000, time=348.4 ms, rem=12.77 m
+iter= 2810, img_loss=0.250793, reg_loss=0.025695, lr=0.00000, time=352.7 ms, rem=12.87 m
+iter= 2820, img_loss=0.252631, reg_loss=0.027845, lr=0.00000, time=367.7 ms, rem=13.36 m
+iter= 2830, img_loss=0.263218, reg_loss=0.022108, lr=0.00000, time=327.7 ms, rem=11.85 m
+iter= 2840, img_loss=0.231541, reg_loss=0.029540, lr=0.00000, time=379.6 ms, rem=13.67 m
+iter= 2850, img_loss=0.256278, reg_loss=0.026673, lr=0.00000, time=361.4 ms, rem=12.95 m
+iter= 2860, img_loss=0.205974, reg_loss=0.032257, lr=0.00000, time=395.8 ms, rem=14.12 m
+iter= 2870, img_loss=0.241217, reg_loss=0.029372, lr=0.00000, time=378.4 ms, rem=13.43 m
+iter= 2880, img_loss=0.269232, reg_loss=0.025396, lr=0.00000, time=352.7 ms, rem=12.46 m
+iter= 2890, img_loss=0.230188, reg_loss=0.031375, lr=0.00000, time=390.5 ms, rem=13.73 m
+validate_itr =  2900
+iter= 2900, img_loss=0.230174, reg_loss=0.031886, lr=0.00000, time=396.9 ms, rem=13.89 m
+iter= 2910, img_loss=0.239497, reg_loss=0.030725, lr=0.00000, time=386.7 ms, rem=13.47 m
+iter= 2920, img_loss=0.223263, reg_loss=0.029136, lr=0.00000, time=373.5 ms, rem=12.95 m
+iter= 2930, img_loss=0.243328, reg_loss=0.026192, lr=0.00000, time=356.9 ms, rem=12.31 m
+iter= 2940, img_loss=0.243194, reg_loss=0.025715, lr=0.00000, time=355.3 ms, rem=12.20 m
+iter= 2950, img_loss=0.227215, reg_loss=0.033627, lr=0.00000, time=409.8 ms, rem=14.00 m
+iter= 2960, img_loss=0.231247, reg_loss=0.028326, lr=0.00000, time=372.3 ms, rem=12.66 m
+iter= 2970, img_loss=0.243558, reg_loss=0.027289, lr=0.00000, time=365.6 ms, rem=12.37 m
+iter= 2980, img_loss=0.212560, reg_loss=0.030956, lr=0.00000, time=392.1 ms, rem=13.20 m
+iter= 2990, img_loss=0.244251, reg_loss=0.026939, lr=0.00000, time=360.3 ms, rem=12.07 m
+validate_itr =  3000
+iter= 3000, img_loss=0.269024, reg_loss=0.022835, lr=0.00000, time=336.9 ms, rem=11.23 m
+iter= 3010, img_loss=0.254632, reg_loss=0.024603, lr=0.00000, time=348.8 ms, rem=11.57 m
+iter= 3020, img_loss=0.229776, reg_loss=0.027520, lr=0.00000, time=369.8 ms, rem=12.20 m
+iter= 3030, img_loss=0.242174, reg_loss=0.028724, lr=0.00000, time=377.7 ms, rem=12.40 m
+iter= 3040, img_loss=0.219059, reg_loss=0.029182, lr=0.00000, time=376.2 ms, rem=12.29 m
+iter= 3050, img_loss=0.232348, reg_loss=0.027760, lr=0.00000, time=370.1 ms, rem=12.03 m
+iter= 3060, img_loss=0.236453, reg_loss=0.028168, lr=0.00000, time=374.3 ms, rem=12.10 m
+iter= 3070, img_loss=0.224964, reg_loss=0.030541, lr=0.00000, time=388.2 ms, rem=12.49 m
+iter= 3080, img_loss=0.213147, reg_loss=0.032423, lr=0.00000, time=398.2 ms, rem=12.74 m
+iter= 3090, img_loss=0.213335, reg_loss=0.031469, lr=0.00000, time=392.1 ms, rem=12.48 m
+validate_itr =  3100
+iter= 3100, img_loss=0.196973, reg_loss=0.031047, lr=0.00000, time=388.5 ms, rem=12.30 m
+iter= 3110, img_loss=0.248242, reg_loss=0.026754, lr=0.00000, time=359.9 ms, rem=11.34 m
+iter= 3120, img_loss=0.256665, reg_loss=0.024981, lr=0.00000, time=354.2 ms, rem=11.10 m
+iter= 3130, img_loss=0.215008, reg_loss=0.031153, lr=0.00000, time=393.0 ms, rem=12.25 m
+iter= 3140, img_loss=0.235733, reg_loss=0.028352, lr=0.00000, time=373.4 ms, rem=11.57 m
+iter= 3150, img_loss=0.260331, reg_loss=0.021723, lr=0.00000, time=331.0 ms, rem=10.21 m
+iter= 3160, img_loss=0.190846, reg_loss=0.036274, lr=0.00000, time=428.5 ms, rem=13.14 m
+iter= 3170, img_loss=0.246227, reg_loss=0.026473, lr=0.00000, time=365.9 ms, rem=11.16 m
+iter= 3180, img_loss=0.249245, reg_loss=0.027486, lr=0.00000, time=371.4 ms, rem=11.27 m
+iter= 3190, img_loss=0.232166, reg_loss=0.029351, lr=0.00000, time=384.6 ms, rem=11.60 m
+validate_itr =  3200
+iter= 3200, img_loss=0.240491, reg_loss=0.026913, lr=0.00000, time=365.0 ms, rem=10.95 m
+iter= 3210, img_loss=0.217865, reg_loss=0.030414, lr=0.00000, time=390.4 ms, rem=11.65 m
+iter= 3220, img_loss=0.233755, reg_loss=0.026973, lr=0.00000, time=369.9 ms, rem=10.97 m
+iter= 3230, img_loss=0.246042, reg_loss=0.023194, lr=0.00000, time=342.6 ms, rem=10.11 m
+iter= 3240, img_loss=0.282994, reg_loss=0.021565, lr=0.00000, time=336.6 ms, rem=9.87 m
+iter= 3250, img_loss=0.244669, reg_loss=0.029025, lr=0.00000, time=385.6 ms, rem=11.25 m
+iter= 3260, img_loss=0.246046, reg_loss=0.022268, lr=0.00000, time=338.9 ms, rem=9.83 m
+iter= 3270, img_loss=0.221859, reg_loss=0.027170, lr=0.00000, time=371.6 ms, rem=10.72 m
+iter= 3280, img_loss=0.237023, reg_loss=0.028063, lr=0.00000, time=379.3 ms, rem=10.87 m
+iter= 3290, img_loss=0.209379, reg_loss=0.027711, lr=0.00000, time=375.5 ms, rem=10.70 m
+validate_itr =  3300
+iter= 3300, img_loss=0.223411, reg_loss=0.027400, lr=0.00000, time=370.9 ms, rem=10.51 m
+iter= 3310, img_loss=0.222758, reg_loss=0.029021, lr=0.00000, time=382.7 ms, rem=10.78 m
+iter= 3320, img_loss=0.239392, reg_loss=0.024602, lr=0.00000, time=355.8 ms, rem=9.96 m
+iter= 3330, img_loss=0.228193, reg_loss=0.025870, lr=0.00000, time=360.8 ms, rem=10.04 m
+iter= 3340, img_loss=0.243111, reg_loss=0.028749, lr=0.00000, time=383.4 ms, rem=10.61 m
+iter= 3350, img_loss=0.247559, reg_loss=0.025345, lr=0.00000, time=362.6 ms, rem=9.97 m
+iter= 3360, img_loss=0.221964, reg_loss=0.028547, lr=0.00000, time=380.3 ms, rem=10.40 m
+iter= 3370, img_loss=0.252981, reg_loss=0.024346, lr=0.00000, time=355.6 ms, rem=9.66 m
+iter= 3380, img_loss=0.248386, reg_loss=0.028050, lr=0.00000, time=380.8 ms, rem=10.28 m
+iter= 3390, img_loss=0.233752, reg_loss=0.026762, lr=0.00000, time=370.7 ms, rem=9.95 m
+validate_itr =  3400
+iter= 3400, img_loss=0.254675, reg_loss=0.025113, lr=0.00000, time=357.9 ms, rem=9.54 m
+iter= 3410, img_loss=0.226090, reg_loss=0.023496, lr=0.00000, time=347.0 ms, rem=9.20 m
+iter= 3420, img_loss=0.238130, reg_loss=0.028097, lr=0.00000, time=378.4 ms, rem=9.97 m
+iter= 3430, img_loss=0.234976, reg_loss=0.026000, lr=0.00000, time=367.0 ms, rem=9.60 m
+iter= 3440, img_loss=0.198027, reg_loss=0.030989, lr=0.00000, time=397.9 ms, rem=10.35 m
+iter= 3450, img_loss=0.264971, reg_loss=0.021828, lr=0.00000, time=339.3 ms, rem=8.76 m
+iter= 3460, img_loss=0.236784, reg_loss=0.026074, lr=0.00000, time=368.2 ms, rem=9.45 m
+iter= 3470, img_loss=0.214024, reg_loss=0.028698, lr=0.00000, time=383.4 ms, rem=9.78 m
+iter= 3480, img_loss=0.226354, reg_loss=0.027555, lr=0.00000, time=375.9 ms, rem=9.52 m
+iter= 3490, img_loss=0.253567, reg_loss=0.022699, lr=0.00000, time=344.9 ms, rem=8.68 m
+validate_itr =  3500
+iter= 3500, img_loss=0.217066, reg_loss=0.030420, lr=0.00000, time=399.3 ms, rem=9.98 m
+iter= 3510, img_loss=0.228731, reg_loss=0.025519, lr=0.00000, time=362.9 ms, rem=9.01 m
+iter= 3520, img_loss=0.239735, reg_loss=0.026233, lr=0.00000, time=371.0 ms, rem=9.15 m
+iter= 3530, img_loss=0.217407, reg_loss=0.028626, lr=0.00000, time=383.3 ms, rem=9.39 m
+iter= 3540, img_loss=0.251936, reg_loss=0.023881, lr=0.00000, time=354.0 ms, rem=8.61 m
+iter= 3550, img_loss=0.252622, reg_loss=0.021564, lr=0.00000, time=339.5 ms, rem=8.21 m
+iter= 3560, img_loss=0.231214, reg_loss=0.025427, lr=0.00000, time=365.0 ms, rem=8.76 m
+iter= 3570, img_loss=0.260611, reg_loss=0.025984, lr=0.00000, time=372.1 ms, rem=8.87 m
+iter= 3580, img_loss=0.239882, reg_loss=0.024771, lr=0.00000, time=359.6 ms, rem=8.51 m
+iter= 3590, img_loss=0.193732, reg_loss=0.034306, lr=0.00000, time=427.0 ms, rem=10.03 m
+validate_itr =  3600
+iter= 3600, img_loss=0.223609, reg_loss=0.026850, lr=0.00000, time=374.5 ms, rem=8.74 m
+iter= 3610, img_loss=0.234734, reg_loss=0.024579, lr=0.00000, time=360.3 ms, rem=8.35 m
+iter= 3620, img_loss=0.255201, reg_loss=0.023746, lr=0.00000, time=355.2 ms, rem=8.17 m
+iter= 3630, img_loss=0.221036, reg_loss=0.026618, lr=0.00000, time=373.6 ms, rem=8.53 m
+iter= 3640, img_loss=0.241671, reg_loss=0.026634, lr=0.00000, time=377.3 ms, rem=8.55 m
+iter= 3650, img_loss=0.250445, reg_loss=0.025731, lr=0.00000, time=370.9 ms, rem=8.34 m
+iter= 3660, img_loss=0.218514, reg_loss=0.029105, lr=0.00000, time=389.0 ms, rem=8.69 m
+iter= 3670, img_loss=0.231709, reg_loss=0.024962, lr=0.00000, time=362.2 ms, rem=8.03 m
+iter= 3680, img_loss=0.245720, reg_loss=0.020945, lr=0.00000, time=334.4 ms, rem=7.36 m
+iter= 3690, img_loss=0.195663, reg_loss=0.030239, lr=0.00000, time=398.9 ms, rem=8.71 m
+validate_itr =  3700
+iter= 3700, img_loss=0.237515, reg_loss=0.024192, lr=0.00000, time=362.0 ms, rem=7.84 m
+iter= 3710, img_loss=0.241532, reg_loss=0.022188, lr=0.00000, time=345.1 ms, rem=7.42 m
+iter= 3720, img_loss=0.217244, reg_loss=0.027565, lr=0.00000, time=381.7 ms, rem=8.14 m
+iter= 3730, img_loss=0.237452, reg_loss=0.023943, lr=0.00000, time=359.1 ms, rem=7.60 m
+iter= 3740, img_loss=0.263216, reg_loss=0.020705, lr=0.00000, time=338.5 ms, rem=7.11 m
+iter= 3750, img_loss=0.215762, reg_loss=0.026256, lr=0.00000, time=376.8 ms, rem=7.85 m
+iter= 3760, img_loss=0.247183, reg_loss=0.023258, lr=0.00000, time=357.6 ms, rem=7.39 m
+iter= 3770, img_loss=0.229174, reg_loss=0.027275, lr=0.00000, time=383.3 ms, rem=7.86 m
+iter= 3780, img_loss=0.208124, reg_loss=0.028641, lr=0.00000, time=391.1 ms, rem=7.95 m
+iter= 3790, img_loss=0.223915, reg_loss=0.026664, lr=0.00000, time=379.7 ms, rem=7.66 m
+validate_itr =  3800
+iter= 3800, img_loss=0.258452, reg_loss=0.022814, lr=0.00000, time=353.5 ms, rem=7.07 m
+iter= 3810, img_loss=0.222521, reg_loss=0.027684, lr=0.00000, time=383.9 ms, rem=7.61 m
+iter= 3820, img_loss=0.242818, reg_loss=0.023233, lr=0.00000, time=356.5 ms, rem=7.01 m
+iter= 3830, img_loss=0.224454, reg_loss=0.023428, lr=0.00000, time=356.3 ms, rem=6.95 m
+iter= 3840, img_loss=0.248237, reg_loss=0.020751, lr=0.00000, time=342.3 ms, rem=6.62 m
+iter= 3850, img_loss=0.217433, reg_loss=0.031036, lr=0.00000, time=419.9 ms, rem=8.05 m
+iter= 3860, img_loss=0.216488, reg_loss=0.029364, lr=0.00000, time=397.1 ms, rem=7.55 m
+iter= 3870, img_loss=0.241115, reg_loss=0.023844, lr=0.00000, time=361.6 ms, rem=6.81 m
+iter= 3880, img_loss=0.249928, reg_loss=0.019682, lr=0.00000, time=335.1 ms, rem=6.25 m
+iter= 3890, img_loss=0.226762, reg_loss=0.025869, lr=0.00000, time=372.4 ms, rem=6.89 m
+validate_itr =  3900
+iter= 3900, img_loss=0.227230, reg_loss=0.023995, lr=0.00000, time=360.4 ms, rem=6.61 m
+iter= 3910, img_loss=0.211044, reg_loss=0.028681, lr=0.00000, time=390.4 ms, rem=7.09 m
+iter= 3920, img_loss=0.238865, reg_loss=0.023533, lr=0.00000, time=357.7 ms, rem=6.44 m
+iter= 3930, img_loss=0.220501, reg_loss=0.026380, lr=0.00000, time=378.1 ms, rem=6.74 m
+iter= 3940, img_loss=0.255122, reg_loss=0.018098, lr=0.00000, time=323.5 ms, rem=5.72 m
+iter= 3950, img_loss=0.227300, reg_loss=0.025116, lr=0.00000, time=367.1 ms, rem=6.42 m
+iter= 3960, img_loss=0.234450, reg_loss=0.021826, lr=0.00000, time=348.2 ms, rem=6.04 m
+iter= 3970, img_loss=0.248046, reg_loss=0.021451, lr=0.00000, time=347.5 ms, rem=5.97 m
+iter= 3980, img_loss=0.220466, reg_loss=0.025983, lr=0.00000, time=380.0 ms, rem=6.46 m
+iter= 3990, img_loss=0.234588, reg_loss=0.022096, lr=0.00000, time=351.3 ms, rem=5.91 m
+validate_itr =  4000
+iter= 4000, img_loss=0.225291, reg_loss=0.023630, lr=0.00000, time=362.5 ms, rem=6.04 m
+iter= 4010, img_loss=0.244071, reg_loss=0.020911, lr=0.00000, time=343.9 ms, rem=5.68 m
+iter= 4020, img_loss=0.250700, reg_loss=0.021792, lr=0.00000, time=353.9 ms, rem=5.78 m
+iter= 4030, img_loss=0.207136, reg_loss=0.028847, lr=0.00000, time=397.4 ms, rem=6.42 m
+iter= 4040, img_loss=0.252553, reg_loss=0.022151, lr=0.00000, time=353.5 ms, rem=5.66 m
+iter= 4050, img_loss=0.211731, reg_loss=0.027373, lr=0.00000, time=386.7 ms, rem=6.12 m
+iter= 4060, img_loss=0.214897, reg_loss=0.026320, lr=0.00000, time=380.9 ms, rem=5.97 m
+iter= 4070, img_loss=0.239801, reg_loss=0.023099, lr=0.00000, time=360.2 ms, rem=5.58 m
+iter= 4080, img_loss=0.283634, reg_loss=0.015435, lr=0.00000, time=308.9 ms, rem=4.74 m
+iter= 4090, img_loss=0.220783, reg_loss=0.027892, lr=0.00000, time=392.3 ms, rem=5.95 m
+validate_itr =  4100
+iter= 4100, img_loss=0.224773, reg_loss=0.025311, lr=0.00000, time=374.0 ms, rem=5.61 m
+iter= 4110, img_loss=0.232910, reg_loss=0.022000, lr=0.00000, time=350.0 ms, rem=5.19 m
+iter= 4120, img_loss=0.229570, reg_loss=0.025929, lr=0.00000, time=378.7 ms, rem=5.55 m
+iter= 4130, img_loss=0.212187, reg_loss=0.025396, lr=0.00000, time=372.3 ms, rem=5.40 m
+iter= 4140, img_loss=0.206358, reg_loss=0.026776, lr=0.00000, time=384.4 ms, rem=5.51 m
+iter= 4150, img_loss=0.214049, reg_loss=0.026425, lr=0.00000, time=383.1 ms, rem=5.43 m
+iter= 4160, img_loss=0.244116, reg_loss=0.023313, lr=0.00000, time=361.0 ms, rem=5.05 m
+iter= 4170, img_loss=0.228671, reg_loss=0.024844, lr=0.00000, time=371.7 ms, rem=5.14 m
+iter= 4180, img_loss=0.239838, reg_loss=0.019644, lr=0.00000, time=339.3 ms, rem=4.64 m
+iter= 4190, img_loss=0.203775, reg_loss=0.029104, lr=0.00000, time=399.4 ms, rem=5.39 m
+validate_itr =  4200
+iter= 4200, img_loss=0.265675, reg_loss=0.019312, lr=0.00000, time=335.8 ms, rem=4.48 m
+iter= 4210, img_loss=0.209715, reg_loss=0.024718, lr=0.00000, time=372.0 ms, rem=4.90 m
+iter= 4220, img_loss=0.215124, reg_loss=0.022313, lr=0.00000, time=356.2 ms, rem=4.63 m
+iter= 4230, img_loss=0.220641, reg_loss=0.026961, lr=0.00000, time=389.0 ms, rem=4.99 m
+iter= 4240, img_loss=0.197376, reg_loss=0.029231, lr=0.00000, time=402.1 ms, rem=5.09 m
+iter= 4250, img_loss=0.208419, reg_loss=0.024971, lr=0.00000, time=372.7 ms, rem=4.66 m
+iter= 4260, img_loss=0.238036, reg_loss=0.023130, lr=0.00000, time=361.9 ms, rem=4.46 m
+iter= 4270, img_loss=0.194164, reg_loss=0.027207, lr=0.00000, time=390.9 ms, rem=4.76 m
+iter= 4280, img_loss=0.208988, reg_loss=0.024889, lr=0.00000, time=374.9 ms, rem=4.50 m
+iter= 4290, img_loss=0.271830, reg_loss=0.020280, lr=0.00000, time=346.2 ms, rem=4.10 m
+validate_itr =  4300
+iter= 4300, img_loss=0.253044, reg_loss=0.021437, lr=0.00000, time=354.7 ms, rem=4.14 m
+iter= 4310, img_loss=0.265798, reg_loss=0.016136, lr=0.00000, time=318.1 ms, rem=3.66 m
+iter= 4320, img_loss=0.237770, reg_loss=0.020996, lr=0.00000, time=350.8 ms, rem=3.98 m
+iter= 4330, img_loss=0.197958, reg_loss=0.025970, lr=0.00000, time=382.4 ms, rem=4.27 m
+iter= 4340, img_loss=0.220310, reg_loss=0.024627, lr=0.00000, time=375.8 ms, rem=4.13 m
+iter= 4350, img_loss=0.232368, reg_loss=0.019620, lr=0.00000, time=341.4 ms, rem=3.70 m
+iter= 4360, img_loss=0.238545, reg_loss=0.022316, lr=0.00000, time=362.6 ms, rem=3.87 m
+iter= 4370, img_loss=0.225232, reg_loss=0.022213, lr=0.00000, time=358.9 ms, rem=3.77 m
+iter= 4380, img_loss=0.202901, reg_loss=0.026429, lr=0.00000, time=390.1 ms, rem=4.03 m
+iter= 4390, img_loss=0.239685, reg_loss=0.024159, lr=0.00000, time=376.1 ms, rem=3.82 m
+validate_itr =  4400
+iter= 4400, img_loss=0.238947, reg_loss=0.020357, lr=0.00000, time=347.4 ms, rem=3.47 m
+iter= 4410, img_loss=0.242184, reg_loss=0.023510, lr=0.00000, time=370.6 ms, rem=3.64 m
+iter= 4420, img_loss=0.216077, reg_loss=0.022349, lr=0.00000, time=363.6 ms, rem=3.51 m
+iter= 4430, img_loss=0.217946, reg_loss=0.023673, lr=0.00000, time=369.5 ms, rem=3.51 m
+iter= 4440, img_loss=0.228039, reg_loss=0.020987, lr=0.00000, time=353.8 ms, rem=3.30 m
+iter= 4450, img_loss=0.215332, reg_loss=0.023333, lr=0.00000, time=369.1 ms, rem=3.38 m
+iter= 4460, img_loss=0.173770, reg_loss=0.027425, lr=0.00000, time=397.3 ms, rem=3.58 m
+iter= 4470, img_loss=0.230671, reg_loss=0.019822, lr=0.00000, time=346.1 ms, rem=3.06 m
+iter= 4480, img_loss=0.205010, reg_loss=0.028678, lr=0.00000, time=406.3 ms, rem=3.52 m
+iter= 4490, img_loss=0.249445, reg_loss=0.020880, lr=0.00000, time=355.1 ms, rem=3.02 m
+validate_itr =  4500
+iter= 4500, img_loss=0.269164, reg_loss=0.018602, lr=0.00000, time=341.2 ms, rem=2.84 m
+iter= 4510, img_loss=0.228598, reg_loss=0.020908, lr=0.00000, time=353.5 ms, rem=2.89 m
+iter= 4520, img_loss=0.215564, reg_loss=0.022015, lr=0.00000, time=359.5 ms, rem=2.88 m
+iter= 4530, img_loss=0.236035, reg_loss=0.022365, lr=0.00000, time=365.5 ms, rem=2.86 m
+iter= 4540, img_loss=0.230509, reg_loss=0.022248, lr=0.00000, time=365.5 ms, rem=2.80 m
+iter= 4550, img_loss=0.243387, reg_loss=0.021004, lr=0.00000, time=358.5 ms, rem=2.69 m
+iter= 4560, img_loss=0.222231, reg_loss=0.023353, lr=0.00000, time=373.8 ms, rem=2.74 m
+iter= 4570, img_loss=0.212169, reg_loss=0.024131, lr=0.00000, time=376.9 ms, rem=2.70 m
+iter= 4580, img_loss=0.240608, reg_loss=0.022042, lr=0.00000, time=363.7 ms, rem=2.55 m
+iter= 4590, img_loss=0.252226, reg_loss=0.019036, lr=0.00000, time=345.5 ms, rem=2.36 m
+validate_itr =  4600
+iter= 4600, img_loss=0.225852, reg_loss=0.022042, lr=0.00000, time=364.8 ms, rem=2.43 m
+iter= 4610, img_loss=0.224807, reg_loss=0.023752, lr=0.00000, time=376.5 ms, rem=2.45 m
+iter= 4620, img_loss=0.222951, reg_loss=0.021157, lr=0.00000, time=360.0 ms, rem=2.28 m
+iter= 4630, img_loss=0.238292, reg_loss=0.024685, lr=0.00000, time=383.8 ms, rem=2.37 m
+iter= 4640, img_loss=0.197926, reg_loss=0.026933, lr=0.00000, time=400.5 ms, rem=2.40 m
+iter= 4650, img_loss=0.217786, reg_loss=0.023337, lr=0.00000, time=373.9 ms, rem=2.18 m
+iter= 4660, img_loss=0.243546, reg_loss=0.019897, lr=0.00000, time=354.7 ms, rem=2.01 m
+iter= 4670, img_loss=0.236808, reg_loss=0.023440, lr=0.00000, time=375.9 ms, rem=2.07 m
+iter= 4680, img_loss=0.174524, reg_loss=0.029808, lr=0.00000, time=418.8 ms, rem=2.23 m
+iter= 4690, img_loss=0.236294, reg_loss=0.020324, lr=0.00000, time=353.7 ms, rem=1.83 m
+validate_itr =  4700
+iter= 4700, img_loss=0.228503, reg_loss=0.022650, lr=0.00000, time=372.9 ms, rem=1.86 m
+iter= 4710, img_loss=0.246139, reg_loss=0.017308, lr=0.00000, time=337.1 ms, rem=1.63 m
+iter= 4720, img_loss=0.215705, reg_loss=0.024253, lr=0.00000, time=384.3 ms, rem=1.79 m
+iter= 4730, img_loss=0.227625, reg_loss=0.024531, lr=0.00000, time=388.4 ms, rem=1.75 m
+iter= 4740, img_loss=0.254402, reg_loss=0.016215, lr=0.00000, time=332.8 ms, rem=1.44 m
+iter= 4750, img_loss=0.227482, reg_loss=0.019333, lr=0.00000, time=350.2 ms, rem=1.46 m
+iter= 4760, img_loss=0.213783, reg_loss=0.025392, lr=0.00000, time=391.9 ms, rem=1.57 m
+iter= 4770, img_loss=0.231713, reg_loss=0.019333, lr=0.00000, time=353.4 ms, rem=1.35 m
+iter= 4780, img_loss=0.242096, reg_loss=0.018505, lr=0.00000, time=347.7 ms, rem=1.27 m
+iter= 4790, img_loss=0.243487, reg_loss=0.021862, lr=0.00000, time=369.9 ms, rem=1.29 m
+validate_itr =  4800
+iter= 4800, img_loss=0.209240, reg_loss=0.025125, lr=0.00000, time=391.6 ms, rem=1.31 m
+iter= 4810, img_loss=0.203181, reg_loss=0.026899, lr=0.00000, time=402.5 ms, rem=1.27 m
+iter= 4820, img_loss=0.222751, reg_loss=0.021619, lr=0.00000, time=372.6 ms, rem=1.12 m
+iter= 4830, img_loss=0.215098, reg_loss=0.022828, lr=0.00000, time=379.1 ms, rem=1.07 m
+iter= 4840, img_loss=0.217083, reg_loss=0.021462, lr=0.00000, time=370.3 ms, rem=59.25 s
+iter= 4850, img_loss=0.205530, reg_loss=0.024194, lr=0.00000, time=389.4 ms, rem=58.41 s
+iter= 4860, img_loss=0.238763, reg_loss=0.018633, lr=0.00000, time=352.1 ms, rem=49.30 s
+iter= 4870, img_loss=0.153831, reg_loss=0.032458, lr=0.00000, time=442.4 ms, rem=57.52 s
+iter= 4880, img_loss=0.219876, reg_loss=0.022617, lr=0.00000, time=377.1 ms, rem=45.26 s
+iter= 4890, img_loss=0.222005, reg_loss=0.023563, lr=0.00000, time=384.7 ms, rem=42.32 s
+validate_itr =  4900
+iter= 4900, img_loss=0.185889, reg_loss=0.024924, lr=0.00000, time=394.2 ms, rem=39.42 s
+iter= 4910, img_loss=0.269164, reg_loss=0.016588, lr=0.00000, time=343.7 ms, rem=30.93 s
+iter= 4920, img_loss=0.211564, reg_loss=0.022227, lr=0.00000, time=375.4 ms, rem=30.04 s
+iter= 4930, img_loss=0.226397, reg_loss=0.020514, lr=0.00000, time=365.6 ms, rem=25.59 s
+iter= 4940, img_loss=0.191180, reg_loss=0.027260, lr=0.00000, time=412.9 ms, rem=24.77 s
+iter= 4950, img_loss=0.219452, reg_loss=0.018124, lr=0.00000, time=351.5 ms, rem=17.57 s
+iter= 4960, img_loss=0.184968, reg_loss=0.025866, lr=0.00000, time=404.2 ms, rem=16.17 s
+iter= 4970, img_loss=0.233314, reg_loss=0.019638, lr=0.00000, time=363.9 ms, rem=10.92 s
+iter= 4980, img_loss=0.188936, reg_loss=0.024023, lr=0.00000, time=393.8 ms, rem=7.88 s
+iter= 4990, img_loss=0.252282, reg_loss=0.015673, lr=0.00000, time=338.7 ms, rem=3.39 s
+validate_itr =  5000
+iter= 5000, img_loss=0.233074, reg_loss=0.020873, lr=0.00000, time=374.4 ms, rem=0.00 s
+validation: 
+FLAGS.n_samples:  32
+Running validation
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+validate_itr =  0
+MSE,      PSNR
+0.64688171, 2.065
+Writing mesh:  out/nerf_hotdog10/mesh/mesh.obj
+    writing 98883 vertices
+    writing 193918 texcoords
+    writing 98883 normals
+    writing 185244 faces
+Writing material:  out/nerf_hotdog10/mesh/mesh.mtl
+Done exporting mesh
+OptiXStateWrapper destructor 

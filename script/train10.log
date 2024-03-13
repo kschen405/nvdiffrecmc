@@ -1,0 +1,98 @@
+000 (224305.000.000) 03/11 23:13:01 Job submitted from host: <172.22.224.127:9618?addrs=172.22.224.127-9618&noUDP&sock=2098_a1c8_4>
+...
+009 (224305.000.000) 03/11 23:21:38 Job was aborted by the user.
+	via condor_rm (by user kc81)
+...
+000 (224307.000.000) 03/11 23:29:23 Job submitted from host: <172.22.224.127:9618?addrs=172.22.224.127-9618&noUDP&sock=2098_a1c8_4>
+...
+009 (224307.000.000) 03/11 23:40:37 Job was aborted by the user.
+	via condor_rm (by user kc81)
+...
+000 (224316.000.000) 03/11 23:54:11 Job submitted from host: <172.22.224.127:9618?addrs=172.22.224.127-9618&noUDP&sock=2098_a1c8_4>
+...
+001 (224316.000.000) 03/11 23:54:22 Job executing on host: <172.22.224.169:9618?addrs=172.22.224.169-9618&noUDP&sock=3614_7b5c_3>
+...
+006 (224316.000.000) 03/11 23:54:30 Image size of job updated: 12920
+	5  -  MemoryUsage of job (MB)
+	4520  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/11 23:59:30 Image size of job updated: 70829448
+	4237  -  MemoryUsage of job (MB)
+	4338040  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:04:31 Image size of job updated: 70869452
+	4238  -  MemoryUsage of job (MB)
+	4338728  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:09:32 Image size of job updated: 70869452
+	4238  -  MemoryUsage of job (MB)
+	4339408  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:14:32 Image size of job updated: 70869452
+	4239  -  MemoryUsage of job (MB)
+	4340056  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:19:32 Image size of job updated: 70869452
+	4239  -  MemoryUsage of job (MB)
+	4340704  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:24:33 Image size of job updated: 70869452
+	4240  -  MemoryUsage of job (MB)
+	4341364  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:29:34 Image size of job updated: 70869452
+	4241  -  MemoryUsage of job (MB)
+	4342020  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:34:34 Image size of job updated: 70869452
+	4241  -  MemoryUsage of job (MB)
+	4342668  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:39:34 Image size of job updated: 70869452
+	4242  -  MemoryUsage of job (MB)
+	4343316  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:44:35 Image size of job updated: 70869452
+	4243  -  MemoryUsage of job (MB)
+	4343960  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:54:35 Image size of job updated: 81629112
+	5720  -  MemoryUsage of job (MB)
+	5856392  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 00:59:36 Image size of job updated: 81669116
+	5721  -  MemoryUsage of job (MB)
+	5857380  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 01:04:37 Image size of job updated: 81669116
+	5722  -  MemoryUsage of job (MB)
+	5858388  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 01:09:37 Image size of job updated: 81669116
+	5723  -  MemoryUsage of job (MB)
+	5859412  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 01:14:37 Image size of job updated: 81669372
+	5724  -  MemoryUsage of job (MB)
+	5860540  -  ResidentSetSize of job (KB)
+...
+006 (224316.000.000) 03/12 01:19:38 Image size of job updated: 81669372
+	5725  -  MemoryUsage of job (MB)
+	5861556  -  ResidentSetSize of job (KB)
+...
+005 (224316.000.000) 03/12 01:24:10 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 02:29:11, Sys 0 00:42:16  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 02:29:11, Sys 0 00:42:16  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     1.21        4         4 
+	   Disk (KB)            :     2           2   1551012 
+	   Gpus                 :     0.90        1         1 "CUDA7"
+	   Memory (MB)          :  5725           1       128 
+...

@@ -20,8 +20,8 @@ python -c "import scipy;"
 # pip uninstall tinycudann -y
 # pip install --global-option="--no-networks" git+https://github.com/NVlabs/tiny-cuda-nn#subdirectory=bindings/torch
 # python data/download_datasets.py
-# python train.py --config configs/nerf_hotdog.json
-python test.py
+python train.py --config configs/nerf_hotdog00.json
+# python test.py
 # python train.py --config configs/waymo.json
 # python train.py --outdir=finetune-pretrain --resume "diffusion-stylegan2-lsun-bedroom.pkl" --data="/home/kc81/datasets/lsun_bedroom200k.zip" --gpus=2 --cfg paper256 --kimg 50712 --target 0.6 --ts_dist priority
 # python converter.py ../../datasets/wod ../../datasets/wod_kitti_test --prefix 0 --num_proc 8

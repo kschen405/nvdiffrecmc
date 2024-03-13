@@ -107,8 +107,8 @@ def prepare_batch(target, train_res, bg_type):
     target['background'] = background
     # TODO: waymo is a whole scene, not an object
     # target['img'] = torch.cat((torch.lerp(background, target['img'][..., 0:3], target['img'][..., 3:4]), target['img'][..., 3:4]), dim=-1)
-    print("target['img'] = ", target['img'].shape)
-    print("target['resolution'] = ", target['resolution'], 'train_res = ', train_res)
+    # print("target['img'] = ", target['img'].shape)
+    # print("target['resolution'] = ", target['resolution'], 'train_res = ', train_res)
     return target
 
 ###############################################################################
@@ -611,17 +611,31 @@ if __name__ == "__main__":
         dataset_train    = DatasetMesh(ref_mesh, glctx, RADIUS, FLAGS, validate=False)
         dataset_validate = DatasetMesh(ref_mesh, glctx_display, RADIUS, FLAGS, validate=True)
     elif os.path.isdir(FLAGS.ref_mesh):
+        cfg_path_train = os.path.join(FLAGS.ref_mesh, 'transforms_train.json')
+        cfg_path_val = os.path.join(FLAGS.ref_mesh, 'transforms_test.json')
+        cfg_studio_path_train = os.path.join(FLAGS.ref_mesh_studio, 'train_out', 'transforms_train.json')
+        cfg_studio_path_val = os.path.join(FLAGS.ref_mesh_studio, 'val_out', 'transforms_test.json')
+
         if os.path.isfile(os.path.join(FLAGS.ref_mesh, 'poses_bounds.npy')):
             dataset_train    = DatasetLLFF(FLAGS.ref_mesh, FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
             dataset_validate = DatasetLLFF(FLAGS.ref_mesh, FLAGS)
         elif FLAGS.waymo:
             dataset_train = WaymoDataset(FLAGS.ref_mesh, 'train', FLAGS, downsample=0.5)
             dataset_validate = WaymoDataset(FLAGS.ref_mesh, 'valid', FLAGS, downsample=0.5) # TODO valid?
-        elif os.path.isfile(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'))  and not os.path.isfile(os.path.join(FLAGS.ref_mesh, 'intrinsics.txt')):
-            dataset_train    = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'), FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
-            dataset_validate = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_test.json'), FLAGS)
         else:
-            assert False, "Invalid dataset format"
+            dataset_train    = DatasetNERF(cfg_path_train, cfg_studio_path_train, FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
+            dataset_validate = DatasetNERF(cfg_path_val, cfg_studio_path_val, FLAGS)
+        # elif not FLAGS.nvdif_extrinsic:
+        #     dataset_train    = DatasetNERF(cfg_path_train, cfg_studio_path_train, FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
+        #     dataset_validate = DatasetNERF(cfg_path_val, cfg_studio_path_val, FLAGS)
+        # elif os.path.isfile(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'))  and not os.path.isfile(os.path.join(FLAGS.ref_mesh, 'intrinsics.txt')):
+        #     dataset_train    = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_train.json'), FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
+        #     dataset_validate = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'transforms_test.json'), FLAGS)
+        # elif os.path.isfile(os.path.join(FLAGS.ref_mesh, 'train_out', 'transforms_train.json'))  and not os.path.isfile(os.path.join(FLAGS.ref_mesh, 'intrinsics.txt')):
+        #     dataset_train    = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'train_out', 'transforms_train.json'), FLAGS, examples=(FLAGS.iter+1)*FLAGS.batch)
+        # #     dataset_validate = DatasetNERF(os.path.join(FLAGS.ref_mesh, 'val_out', 'transforms_test.json'), FLAGS)
+        # else:
+        #     assert False, "Invalid dataset format"
     else:
         print("Invalid dataset format", FLAGS.ref_mesh)
         assert False, "Invalid dataset format"
