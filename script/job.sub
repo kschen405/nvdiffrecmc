@@ -1,0 +1,9 @@
+Executable   = adobe4.sh
+Log          = adobe4.log
+Output       = adobe4.stdout
+Error        = adobe4.stderr
+
+Request_gpus = 0
+Request_cpus = 2
+requirements = (Machine == "vision-22.cs.illinois.edu" || Machine == "vision-23.cs.illinois.edu")
+Queue

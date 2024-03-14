@@ -156,3 +156,111 @@
 	   Gpus                 :     0.90        1         1 "CUDA1"
 	   Memory (MB)          :  5730           1       128 
 ...
+000 (224469.000.000) 03/13 20:47:04 Job submitted from host: <172.22.224.127:9618?addrs=172.22.224.127-9618&noUDP&sock=2098_a1c8_4>
+...
+001 (224469.000.000) 03/13 20:47:21 Job executing on host: <172.22.224.79:9618?addrs=172.22.224.79-9618&noUDP&sock=3501_f928_3>
+...
+006 (224469.000.000) 03/13 20:47:29 Image size of job updated: 2286644
+	106  -  MemoryUsage of job (MB)
+	108044  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 20:52:29 Image size of job updated: 70940024
+	4243  -  MemoryUsage of job (MB)
+	4344416  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 20:57:30 Image size of job updated: 70940024
+	4244  -  MemoryUsage of job (MB)
+	4345116  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:02:31 Image size of job updated: 70980028
+	4244  -  MemoryUsage of job (MB)
+	4345792  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:07:31 Image size of job updated: 70980028
+	4245  -  MemoryUsage of job (MB)
+	4346520  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:12:32 Image size of job updated: 70980028
+	4246  -  MemoryUsage of job (MB)
+	4347148  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:17:33 Image size of job updated: 71030288
+	4246  -  MemoryUsage of job (MB)
+	4347736  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:22:33 Image size of job updated: 71030288
+	4247  -  MemoryUsage of job (MB)
+	4348336  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:27:33 Image size of job updated: 71030288
+	4248  -  MemoryUsage of job (MB)
+	4348948  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:32:34 Image size of job updated: 71030288
+	4248  -  MemoryUsage of job (MB)
+	4349544  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:37:35 Image size of job updated: 71030288
+	4249  -  MemoryUsage of job (MB)
+	4350164  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:42:35 Image size of job updated: 71030288
+	4249  -  MemoryUsage of job (MB)
+	4350768  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:47:36 Image size of job updated: 79625244
+	5652  -  MemoryUsage of job (MB)
+	5786964  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:52:37 Image size of job updated: 79625244
+	5653  -  MemoryUsage of job (MB)
+	5787828  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 21:57:37 Image size of job updated: 79665248
+	5654  -  MemoryUsage of job (MB)
+	5788720  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 22:02:37 Image size of job updated: 79665248
+	5654  -  MemoryUsage of job (MB)
+	5789620  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 22:07:38 Image size of job updated: 79665248
+	5655  -  MemoryUsage of job (MB)
+	5790528  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 22:12:39 Image size of job updated: 79665504
+	5656  -  MemoryUsage of job (MB)
+	5791448  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 22:17:39 Image size of job updated: 79665504
+	5657  -  MemoryUsage of job (MB)
+	5792520  -  ResidentSetSize of job (KB)
+...
+006 (224469.000.000) 03/13 22:22:40 Image size of job updated: 79665504
+	5658  -  MemoryUsage of job (MB)
+	5793436  -  ResidentSetSize of job (KB)
+...
+005 (224469.000.000) 03/13 22:26:31 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 02:47:06, Sys 0 00:35:50  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 02:47:06, Sys 0 00:35:50  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated Assigned
+	   Cpus                 :     1.06        4         4 
+	   Disk (KB)            :     2           2   1665552 
+	   Gpus                 :     0.88        1         1 "CUDA7"
+	   Memory (MB)          :  5658           1       128 
+...
+000 (224477.000.000) 03/13 23:10:11 Job submitted from host: <172.22.224.127:9618?addrs=172.22.224.127-9618&noUDP&sock=2098_a1c8_4>
+...
+001 (224477.000.000) 03/13 23:10:15 Job executing on host: <172.22.224.128:9618?addrs=172.22.224.128-9618&noUDP&sock=144451_f316_3>
+...
+006 (224477.000.000) 03/13 23:10:24 Image size of job updated: 16120
+	14  -  MemoryUsage of job (MB)
+	13336  -  ResidentSetSize of job (KB)
+...

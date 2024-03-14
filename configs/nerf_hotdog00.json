@@ -18,5 +18,5 @@
     "denoiser" : "bilateral",
     "display": [{"latlong" : true}, {"bsdf" : "kd"}, {"bsdf" : "ks"}, {"bsdf" : "normal"}],
     "background" : "white",
-    "out_dir": "nerf_hotdog00"
+    "out_dir": "nerf_hotdog00_rel_val"
 }

@@ -6,6 +6,6 @@ Error        = script/train00.stderr
 Request_gpus = 1
 Request_cpus = 4
 #requirements = (Machine == "vision-16.cs.illinois.edu")
-requirements = (Machine == "vision-22.cs.illinois.edu")
-#requirements = (Machine == "vision-3.cs.illinois.edu") || (Machine == "vision-21.cs.illinois.edu") || (Machine == "vision-22.cs.illinois.edu") || (Machine == "vision-23.cs.illinois.edu") || (Machine == "vision-16.cs.illinois.edu")
+#requirements = (Machine == "vision-22.cs.illinois.edu")
+requirements = (Machine == "vision-21.cs.illinois.edu") || (Machine == "vision-22.cs.illinois.edu") || (Machine == "vision-23.cs.illinois.edu") || (Machine == "vision-16.cs.illinois.edu")
 Queue

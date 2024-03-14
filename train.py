@@ -214,7 +214,6 @@ def initial_guess_material(geometry, mlp, FLAGS, init_mat=None):
 ###############################################################################
 
 def validate_itr(glctx, target, ref_mesh, geometry, opt_material, lgt, FLAGS, denoiser, iter=0):
-    print('validate_itr = ', iter)
     result_dict = {}
     with torch.no_grad():
         opt_mesh = geometry.getMesh(opt_material)
@@ -612,7 +611,7 @@ if __name__ == "__main__":
         dataset_validate = DatasetMesh(ref_mesh, glctx_display, RADIUS, FLAGS, validate=True)
     elif os.path.isdir(FLAGS.ref_mesh):
         cfg_path_train = os.path.join(FLAGS.ref_mesh, 'transforms_train.json')
-        cfg_path_val = os.path.join(FLAGS.ref_mesh, 'transforms_test.json')
+        cfg_path_val = os.path.join(FLAGS.ref_mesh, 'transforms_val.json')#
         cfg_studio_path_train = os.path.join(FLAGS.ref_mesh_studio, 'train_out', 'transforms_train.json')
         cfg_studio_path_val = os.path.join(FLAGS.ref_mesh_studio, 'val_out', 'transforms_test.json')
 

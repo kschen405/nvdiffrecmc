@@ -51,6 +51,35 @@ class DatasetNERF(Dataset):
 
 
         self.aspect = self.resolution[1] / self.resolution[0]
+        # Compute relative transformation matrix
+        # nerf_path = '/home/kc81/current_projects/nvdiffrecmc/data/nerf_synthetic/hotdog/transforms_train.json'
+        # nerf_studio_path = '/home/kc81/current_projects/nvdiffrecmc/data/nerf_synthetic/hotdog_nerfstudio/train_out/transforms_train.json'
+        # cfg = json.load(open(nerf_path, 'r'))
+        # cfg_studio = json.load(open(nerf_studio_path, 'r'))
+        # for i in [0, 1, 2]:
+        i = 0
+        file_path_to_find = f"./train/r_{i}"
+        idx1 = -1
+        for idx, frame in enumerate(self.cfg['frames']):
+            if frame['file_path'] == file_path_to_find:
+                idx1 = idx
+                break
+        P1 = self.cfg["frames"][idx1]["transform_matrix"]
+
+        file_path_to_find = f"images/frame_{i+1:05d}.png"
+        idx2 = -1
+        for idx, frame in enumerate(self.cfg_studio['frames']):
+            if frame['file_path'] == file_path_to_find:
+                idx2 = idx
+                break
+        P2 = self.cfg_studio["frames"][idx2]["transform_matrix"]
+        print('idx1 = ', idx1, 'idx2 = , ', idx2)
+        print("P2P1-1 = ", np.matmul(P2, np.linalg.inv(P1)))
+        print("P1P2-1 = ", np.matmul(P1, np.linalg.inv(P2)))
+        self.rel_trans_matrix = np.matmul(P1, np.linalg.inv(P2))
+        print('Our camera pose to nvdifmc pose:')
+        print('self.rel_trans_matrix = ', self.rel_trans_matrix)
+        ####################################################################################################################
         print("self.resolution = ", self.resolution)
         print("self.aspect = ", self.aspect)
         print("DatasetNERF: %d images with shape [%d, %d]" % (self.n_images, self.resolution[0], self.resolution[1]))
@@ -81,13 +110,14 @@ class DatasetNERF(Dataset):
         img    = _load_img(os.path.join(self.base_dir, cfg['frames'][idx]['file_path'])) # cfg can be either nvdif or studio
         if self.FLAGS.nvdif_extrinsic:
             mv     = torch.linalg.inv(torch.tensor(self.cfg['frames'][idx]['transform_matrix'], dtype=torch.float32))
-        else:
-            mv     = torch.linalg.inv(torch.tensor(self.cfg_studio['frames'][idx]['transform_matrix'], dtype=torch.float32))
+        else: # mv: world to camera
+            mv     = torch.linalg.inv(torch.tensor(np.matmul(self.rel_trans_matrix, self.cfg_studio['frames'][idx]['transform_matrix']), dtype=torch.float32))
+            # mv     = torch.linalg.inv(torch.tensor(self.cfg_studio['frames'][idx]['transform_matrix'], dtype=torch.float32))
 
         mv     = mv @ util.rotate_x(-np.pi / 2)
 
-        campos = torch.linalg.inv(mv)[:3, 3]
-        mvp    = proj @ mv
+        campos = torch.linalg.inv(mv)[:3, 3] # camera position in the world: x, y, z = translation x, y, z
+        mvp    = proj @ mv # image <- camera <- world # move -> view -> project
 
         return img[None, ...], mv[None, ...], mvp[None, ...], campos[None, ...] # Add batch dimension
 
